@@ -35,20 +35,27 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 .invite-lead,.invite-body{margin:0}
 .invite-lead{font-size:clamp(14px,4cqw,17px);line-height:1.45;font-weight:650;letter-spacing:-.025em}
 .invite-body{margin-top:10px;font-size:clamp(12px,3.3cqw,14px);line-height:1.55;color:#393c3d}
-.accent-title{color:#d90079}
+.accent-title{background:#e4007f;color:#fff;padding:0 2px}
+.accent-green{color:#78be31}
+.accent-red{color:#e60012}
+.accent-blue{color:#009fe3}
+.accent-yellow{background:#fff100;color:#171717;padding:0 2px}
+.accent-lime{background:#8cc63f;color:#171717;padding:0 2px}
+.accent-orange{background:#f37021;color:#fff;padding:0 2px}
 .section-label{display:block;font-size:11px;font-weight:650;line-height:1.2;margin-bottom:10px;letter-spacing:.01em;color:#606667}
 .final-members-text{text-align:left}
-.participant-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 4px;font-size:clamp(11px,3.1cqw,13px);line-height:1.3;font-weight:520;color:#333}
+.participant-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px 4px;font-size:clamp(10px,2.9cqw,12px);line-height:1.3;font-weight:520;letter-spacing:-.025em;color:#333;white-space:nowrap}
 #final-info-text{display:grid;gap:2px;line-height:1.3}
 .venue{font-size:clamp(13px,3.8cqw,16px);font-weight:700}
 .date{font-size:clamp(12px,3.5cqw,15px);font-weight:600}
 .info-time{margin-top:4px;font-size:clamp(10px,2.9cqw,12px);font-weight:500;line-height:1.4;color:#626768}
-.final-cta-wrap{display:grid;gap:5px}
+.final-cta-wrap{display:grid;gap:5px;margin-top:2px}
+.final-cta-wrap.pending{display:none}
 .final-cta-btn{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:34px;padding:6px 10px;background:#231f20;color:#fff;text-decoration:none;border-radius:0;font-weight:700;font-size:12px;border:none;box-shadow:none;visibility:hidden;pointer-events:none}
 .final-cta-btn.visible{visibility:visible;pointer-events:auto}
 .fch{display:none}
 @media(max-width:600px){body{display:block;background:#fff}.phone-frame{width:100vw;height:100svh;aspect-ratio:auto;border:0;border-radius:0;padding:0;box-shadow:none}.phone-screen{border-radius:0}}
-@media(max-width:600px) and (min-height:760px){.final-screen{padding:22px 18px 70px}.final-text-box{gap:12px;font-size:15px}.detail-box{padding:17px}.invite-lead{font-size:18px}.invite-body{font-size:14px;line-height:1.65;margin-top:14px}.section-label{font-size:12px;margin-bottom:14px}.participant-grid{font-size:13px;gap:9px 5px}.venue{font-size:17px}.date{font-size:15px}.info-time{font-size:12px;margin-top:7px}.final-cta-wrap{gap:7px}.final-cta-btn{min-height:42px;padding:8px 12px;font-size:14px}}
+@media(max-width:600px) and (min-height:760px){.final-screen{padding:22px 18px 70px}.final-text-box{gap:12px;font-size:15px}.detail-box{padding:17px}.invite-lead{font-size:18px}.invite-body{font-size:14px;line-height:1.65;margin-top:14px}.section-label{font-size:12px;margin-bottom:14px}.participant-grid{font-size:12px;gap:10px 5px}.venue{font-size:17px}.date{font-size:15px}.info-time{font-size:12px;margin-top:7px}.final-cta-wrap{gap:7px}.final-cta-btn{min-height:42px;padding:8px 12px;font-size:14px}}
 @media(prefers-reduced-motion:reduce){#poster-letters>g{transition:none!important}}
 </style>
 </head>
@@ -212,7 +219,7 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 <div id="final-main-text" class="detail-box"></div>
 <div class="detail-box pending"><span class="section-label">장소 · 일시</span><div id="final-info-text"></div></div>
 <div id="final-members-text" class="final-members-text detail-box pending"></div>
-<div class="final-cta-wrap detail-box pending">
+<div class="final-cta-wrap pending">
 <a class="final-cta-btn" href="https://ddp.or.kr/?menuno=240" target="_blank" rel="noopener noreferrer">DDP 전시 <span aria-hidden="true">↗</span></a>
 <a class="final-cta-btn" href="https://map.naver.com/p/search/%EB%8F%99%EB%8C%80%EB%AC%B8%EB%94%94%EC%9E%90%EC%9D%B8%ED%94%8C%EB%9D%BC%EC%9E%90" target="_blank" rel="noopener noreferrer">오시는 길 <span aria-hidden="true">↗</span></a>
 <a class="final-cta-btn" href="https://www.instagram.com/stuck_in_a_throat/" target="_blank" rel="noopener noreferrer">인스타그램 <span aria-hidden="true">↗</span></a>
@@ -225,9 +232,9 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 <audio id="pop-audio" src="assets/pop.mp3" preload="auto"></audio>
 <audio id="whoosh-audio" src="assets/whoosh.mp3" preload="auto"></audio>
 <script>
-const FINAL_MAIN_HTML = `<p class="invite-lead"><span class="accent-title">목에 걸린 사탕</span>을 함께 꺼내주실 여러분을 초대합니다.</p><p class="invite-body">오랜 시간 준비한 이야기들을 DDP에서 선보입니다. 끝이라고 생각한 뒤에도 전하고 싶은 이야기가 남아 있었습니다. 귀한 걸음으로 함께해 주시면 감사하겠습니다.</p>`;
+const FINAL_MAIN_HTML = `<p class="invite-lead"><span class="accent-title">목에 걸린 사탕</span>을 <span class="accent-green">함께 꺼내주실 여러분</span>을 <span class="accent-yellow">초대합니다.</span></p><p class="invite-body"><span class="accent-red">오랜 시간</span> 준비한 이야기들을 <span class="accent-lime">DDP</span>에서 <span class="accent-yellow">선보입니다.</span> 끝이라고 생각한 뒤에도 <span class="accent-blue">전하고 싶은 이야기</span>가 남아 있었습니다. 귀한 걸음으로 <span class="accent-title">함께해 주시면</span> <span class="accent-orange">감사하겠습니다.</span></p>`;
 const FINAL_INFO_HTML = `<div class="venue">DDP 아트홀 2관 A-29</div><div class="date">2026. 12. 01 – 12. 05</div><div class="info-time">12.01–12.04 10:00–20:00<br/>12.05 10:00–18:00</div>`;
-const FINAL_MEMBERS_HTML = `<div class="section-label">참여자</div><div class="participant-grid"><span>강예은</span><span>강지혜</span><span>김서윤</span><span>김유빈</span><span>김주희</span><span>김창래</span><span>김해준</span><span>김희서</span><span>모소연</span><span>박지호</span><span>방태림</span><span>서유정</span><span>손예림</span><span>양서경</span><span>이채빈</span><span>전승아</span><span>정규태</span><span>진아름</span><span>최성근</span><span>황예은</span></div>`;
+const FINAL_MEMBERS_HTML = `<div class="section-label">참여 디자이너</div><div class="participant-grid"><span>강예은</span><span>강지혜</span><span>김서윤</span><span>김유빈</span><span>김주희</span><span>김창래</span><span>김해준</span><span>김희서</span><span>모소연</span><span>박지호</span><span>방태림</span><span>서유정</span><span>손예림</span><span>양서경</span><span>이채빈</span><span>전승아</span><span>정규태</span><span>진아름</span><span>최성근</span><span>황예은</span></div>`;
 const screen=document.getElementById('phone-screen');
 const track=document.getElementById('scroll-track');
 const opening=document.getElementById('opening');
@@ -247,7 +254,7 @@ const tempMain=document.createElement('div');tempMain.innerHTML=FINAL_MAIN_HTML;
 const tempInfo=document.createElement('div');tempInfo.innerHTML=FINAL_INFO_HTML;document.getElementById('final-info-text').innerHTML=wrapFinalNodes(tempInfo);
 const tempMemb=document.createElement('div');tempMemb.innerHTML=FINAL_MEMBERS_HTML;document.getElementById('final-members-text').innerHTML=wrapFinalNodes(tempMemb);
 const finalChars=[...document.querySelectorAll('.fch')];
-function startFinalTyping(){finalScreen.classList.remove('awaiting');finalScreen.classList.add('visible');if(reducedMotion){document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.display='inline');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'));return}if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].closest('.detail-box')?.classList.remove('pending');finalChars[fIdx].style.display='inline';triggerHaptic();fIdx++}else{clearInterval(timer);typeAudio.pause();typeAudio.loop=false;document.querySelector('.final-cta-wrap').classList.remove('pending');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'))}},24)}
+function startFinalTyping(){finalScreen.classList.remove('awaiting');finalScreen.classList.add('visible');if(reducedMotion){document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.display='inline');document.querySelector('.final-cta-wrap').classList.remove('pending');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'));return}if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].closest('.detail-box')?.classList.remove('pending');finalChars[fIdx].style.display='inline';triggerHaptic();fIdx++}else{clearInterval(timer);typeAudio.pause();typeAudio.loop=false;document.querySelector('.final-cta-wrap').classList.remove('pending');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'))}},24)}
 const candies=[...svg.querySelectorAll('#poster-candies .candy')];
 const letterIds=['MOK-2','EH-2','GUL-2','LIN-2','SA-2','TANG-2'];
 const letterGroups=letterIds.map(id=>document.getElementById(id));
@@ -306,7 +313,21 @@ function release(){
     animateBallPath(ball,path,i*130);
   });
 }
+const rainColors=['#22b3a5','#df90bd','#ffeb00','#9870ad','#ef5632','#61c4e3'];
+function addRainBalls(){
+  const cx=screen.clientWidth/2,spread=Math.min(screen.clientWidth*.25,80);
+  const lanes=[-1,-.6,-.2,.2,.6,1,-.8,-.4,0,.4,.8,0];
+  const diameter=fallingBalls[0]?.offsetWidth||20;
+  for(let i=0;i<12;i++){
+    const ball=document.createElement('i');
+    const size=diameter*(i%4===0?.82:1);
+    ball.className='falling-ball';
+    ball.style.cssText=`left:${cx+lanes[i]*spread}px;top:${-size-i*34}px;width:${size}px;height:${size}px;background:${rainColors[i%rainColors.length]};transform:translate(-50%,-50%)`;
+    screen.appendChild(ball);fallingBalls.push(ball);
+  }
+}
 function fallAndPile(){
+  addRainBalls();
   const cx=screen.clientWidth/2;
   const height=screen.clientHeight;
   const bodies=fallingBalls.map((ball,i)=>({ball,x:parseFloat(ball.style.left),y:parseFloat(ball.style.top),r:ball.offsetWidth/2,vx:(i%2?-.45:.45),vy:0,landed:false}));
@@ -329,7 +350,7 @@ function fallAndPile(){
         }
       }
     }
-    for(let pass=0;pass<24;pass++){
+    for(let pass=0;pass<80;pass++){
       for(let i=0;i<bodies.length;i++)for(let j=i+1;j<bodies.length;j++){
         const a=bodies[i],b=bodies[j],dx=b.x-a.x,dy=b.y-a.y;
         const dist=Math.hypot(dx,dy)||.001,min=a.r+b.r+1;
@@ -342,7 +363,7 @@ function fallAndPile(){
       for(const body of bodies){
         const floor=height-body.r-5;
         const spread=Math.max(0,Math.min(1,(floor-body.y)/(body.r*6)));
-        const limit=body.r*(2.3+3.7*spread);
+        const limit=body.r*(3.6+3.4*spread);
         body.x=Math.max(cx-limit,Math.min(cx+limit,body.x));
         body.y=Math.min(body.y,floor);
       }
@@ -367,7 +388,7 @@ function run(){
   const preview=new URLSearchParams(location.search).get('preview');
   if(preview==='opening')return;
   if(preview==='converged'){opening.classList.add('converged');return}
-  if(preview==='final'){finalScreen.classList.add('visible');track.scrollTop=opening.offsetHeight;document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.display='inline');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'));return}
+  if(preview==='final'){finalScreen.classList.add('visible');track.scrollTop=opening.offsetHeight;document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.display='inline');document.querySelector('.final-cta-wrap').classList.remove('pending');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'));return}
   if(reducedMotion){finalScreen.classList.add('visible');track.scrollTop=opening.offsetHeight;startFinalTyping();return}
   setTimeout(()=>opening.classList.add('converged'),700);
   setTimeout(release,2150);
