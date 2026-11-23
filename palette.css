@@ -2,14 +2,14 @@
    --c-* 여섯 색은 오프닝 구슬, 떨어지는 구슬, 본문 하이라이트에 함께 쓰입니다.
    --ink-* 세 색은 제목과 본문의 컬러 글씨에 쓰입니다. */
 :root {
-  --c-mint: #bcefe5;
-  --c-pink: #f48cbd;
-  --c-yellow: #ffe77a;
-  --c-lime: #aae16b;
-  --c-coral: #ff6979;
-  --c-blue: #70cafa;
+  --c-mint: #a8eddf;
+  --c-pink: #f680b9;
+  --c-yellow: #ffe565;
+  --c-lime: #a2e357;
+  --c-coral: #ff5c70;
+  --c-blue: #60c9fa;
 
-  --ink-pink: #e44993;
-  --ink-teal: #008e85;
-  --ink-coral: #d63b51;
+  --ink-pink: #dc378a;
+  --ink-teal: #00978c;
+  --ink-coral: #d83450;
 }
