@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>목에 걸린 사탕 — 2026 DDP 졸업전시 초대장</title>
+<meta name="description" content="홍익대학교 디자인컨버전스학부 2026 DDP 졸업전시, 목에 걸린 사탕. 12월 1일부터 5일까지 DDP 아트홀 2관 A-29.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..900&display=swap" rel="stylesheet">
+<style>
+:root{font-family:'Google Sans Flex',sans-serif;color:#0f1718;background:#fff;font-synthesis:none}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;overflow-x:hidden}body{min-height:100svh}
+.invite{min-height:100svh;position:relative;overflow:hidden;background:#fff}
+.masthead{position:absolute;z-index:4;top:max(28px,env(safe-area-inset-top));left:clamp(24px,7vw,48px);right:clamp(24px,7vw,48px);display:flex;justify-content:space-between;gap:20px;font-size:clamp(12px,2.7vw,16px);line-height:1.28;letter-spacing:-.025em;font-weight:520}
+.masthead p{margin:0}.masthead p:last-child{text-align:right}
+.stage{position:absolute;inset:0;display:grid;place-items:center;transition:opacity .6s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.stage::before{content:'';position:absolute;inset:0;opacity:.5;background-image:linear-gradient(#eff0f1 1px,transparent 1px),linear-gradient(90deg,#eff0f1 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(transparent 8%,#000 38%,#000 78%,transparent 96%)}
+#main-svg{position:relative;width:min(70vw,380px);height:min(67svh,600px);overflow:visible;filter:drop-shadow(0 0 0 transparent)}
+#main-svg>g{transform-box:fill-box;transform-origin:center;transition:transform 1.05s cubic-bezier(.23,.72,.22,1)}
+.stage.open #main-svg>g:nth-of-type(1){transform:translate(34px,8px) rotate(4deg)}
+.stage.open #main-svg>g:nth-of-type(2){transform:translate(-32px,18px) rotate(-3deg)}
+.stage.open #main-svg>g:nth-of-type(3){transform:translate(31px,-16px) rotate(3deg)}
+.stage.open #main-svg>g:nth-of-type(4){transform:translate(-31px,-19px) rotate(-4deg)}
+.stage.open #main-svg>g:nth-of-type(5){transform:translate(-19px,-22px) rotate(-3deg)}
+.stage.open #main-svg>g:nth-of-type(6){transform:translate(-42px,12px) rotate(-3deg)}
+.stage.gone{opacity:0;transform:scale(1.06);pointer-events:none}
+.candy{transform-box:fill-box;transform-origin:center;will-change:transform,opacity}
+.confetti{position:fixed;pointer-events:none;z-index:8;border-radius:50%;will-change:transform,opacity}
+.details{position:relative;z-index:3;min-height:100svh;padding:max(126px,calc(env(safe-area-inset-top) + 122px)) clamp(28px,8vw,54px) max(36px,env(safe-area-inset-bottom));display:flex;flex-direction:column;justify-content:center;max-width:580px;margin:auto;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s}
+.details.visible{opacity:1;visibility:visible}
+.eyebrow{font-size:clamp(13px,3vw,16px);font-weight:550;letter-spacing:.01em;margin:0 0 16px}
+h1{font-size:clamp(47px,13vw,82px);font-weight:650;letter-spacing:-.09em;line-height:1.05;margin:0 0 28px;word-break:keep-all}
+.invitation{font-size:clamp(19px,5.1vw,25px);line-height:1.58;font-weight:520;letter-spacing:-.035em;margin:0 0 32px;word-break:keep-all;min-height:5em}
+.highlight{background:#faed28;color:#111;padding:0 .08em}.pink{background:#db58a0;color:#fff}.green{color:#319e79}
+.type-char{visibility:hidden}.type-char.shown{visibility:visible}
+.meta{border-top:1.5px solid #111;padding-top:16px;display:grid;grid-template-columns:62px 1fr;gap:14px 16px;font-size:clamp(15px,3.7vw,18px);line-height:1.38;letter-spacing:-.025em}
+.meta-label{font-size:13px;font-weight:600;padding-top:2px}.meta p{margin:0}.meta strong{font-weight:650}.meta small{font-size:.83em;color:#50595a}
+.signature{margin-top:30px;font-size:clamp(14px,3.3vw,16px);line-height:1.4;font-weight:550;letter-spacing:-.025em}
+@media (max-height:700px){.details{justify-content:flex-start;padding-top:110px}.invitation{min-height:0}h1{font-size:clamp(43px,11vw,64px)}}
+@media (prefers-reduced-motion:reduce){#main-svg>g,.stage,.details{transition:none!important}.type-char{visibility:visible}}
+</style>
+</head>
+<body>
+<main class="invite">
+<header class="masthead"><p>2026 DDP<br>Design Graduation<br>Exhibition</p><p>HIDC Hongik Univ.<br>Design Convergence</p></header>
+<section class="stage" id="stage" aria-label="목에 걸린 사탕 로고가 움직이고 사탕이 빠져나옵니다">
+<svg id="main-svg"
+     viewBox="308 272 264 347"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .s { fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 1.5px; }
+      .d { fill: #231f20; }
+    </style>
+  </defs>
+
+  <!-- ── TANG (탕) ─────────────────────────────────── -->
+  <g>
+    <!-- 탕_사탕 (green) -->
+    <rect fill="#84c779" x="513.82" y="579.02" width="22.68" height="22.68" rx="11.34"/>
+    <!-- 탕_ㅇ -->
+    <line class="s" x1="510.99" y1="587.52" x2="510.99" y2="593.19"/>
+    <line class="s" x1="539.33" y1="587.52" x2="539.33" y2="593.19"/>
+    <line class="s" x1="510.99" y1="590.36" x2="539.33" y2="590.36"/>
+    <path class="s" d="M496.81,570.51h56.69c7.82,0,14.17,6.35,14.17,14.17v17.01c0,7.82-6.35,14.17-14.17,14.17h-70.87v-31.18c0-7.82,6.35-14.17,14.17-14.17Z"/>
+    <!-- 탕_ㅏ -->
+    <rect class="s" x="539.33" y="502.48" width="28.35" height="68.03"/>
+    <line class="s" x1="567.68" y1="525.16" x2="562.01" y2="525.16"/>
+    <line class="s" x1="567.68" y1="547.84" x2="562.01" y2="547.84"/>
+    <!-- 탕_ㅌ -->
+    <line class="s" x1="510.99" y1="545"    x2="510.99" y2="550.67"/>
+    <line class="s" x1="510.99" y1="522.32" x2="510.99" y2="527.99"/>
+    <line class="s" x1="510.99" y1="547.84" x2="539.33" y2="547.84"/>
+    <line class="s" x1="510.99" y1="525.16" x2="539.33" y2="525.16"/>
+    <rect class="s" x="482.64" y="502.48" width="56.69" height="68.03"/>
+  </g>
+
+  <!-- ── SA (사) ──────────────────────────────────── -->
+  <g>
+    <!-- 사_사탕 (orange) -->
+    <rect fill="#f04f2c" x="414.61" y="539.33" width="22.68" height="22.68" rx="11.34"/>
+    <!-- 사_ㅏ -->
+    <line class="s" x1="482.64" y1="547.84" x2="476.97" y2="547.84"/>
+    <line class="s" x1="482.64" y1="570.51" x2="476.97" y2="570.51"/>
+    <rect class="s" x="454.29" y="502.48" width="28.35" height="113.39"/>
+    <!-- 사_ㅅ -->
+    <line class="s" x1="425.95" y1="525.16" x2="425.95" y2="615.87"/>
+    <line class="s" x1="428.78" y1="525.16" x2="423.11" y2="525.16"/>
+    <rect class="s" x="397.6"  y="502.48" width="56.69" height="113.39"/>
+  </g>
+
+  <!-- ── LIN (린) ──────────────────────────────────── -->
+  <g>
+    <!-- 린_사탕 (pink) -->
+    <rect fill="#db58a0" x="528" y="465.63" width="22.68" height="22.68" rx="11.34"/>
+    <!-- 린_ㄴ -->
+    <line class="s" x1="539.33" y1="476.97" x2="535.32" y2="480.98"/>
+    <polygon class="s" points="567.68 476.97 567.68 502.48 482.64 502.48 482.64 457.13 539.33 457.13 539.33 476.97 567.68 476.97"/>
+    <!-- 린_ㅣ -->
+    <rect class="s" x="539.33" y="389.1" width="28.35" height="68.03"/>
+    <!-- 린_ㄹ -->
+    <line class="s" x1="510.99" y1="431.62" x2="510.99" y2="437.29"/>
+    <line class="s" x1="510.99" y1="408.94" x2="510.99" y2="414.61"/>
+    <line class="s" x1="510.99" y1="434.45" x2="539.33" y2="434.45"/>
+    <line class="s" x1="482.64" y1="411.77" x2="510.99" y2="411.77"/>
+    <rect class="s" x="482.64" y="389.1" width="56.69" height="68.03"/>
+  </g>
+
+  <!-- ── GUL (걸) ──────────────────────────────────── -->
+  <g>
+    <!-- 걸_사탕 (yellow) -->
+    <rect fill="#faed28" x="414.61" y="400.44" width="22.68" height="22.68" rx="11.34"/>
+    <!-- 걸_ㄹ -->
+    <line class="s" x1="425.95" y1="474.14" x2="425.95" y2="479.81"/>
+    <line class="s" x1="425.95" y1="454.29" x2="425.95" y2="459.96"/>
+    <line class="s" x1="397.6"  y1="457.13" x2="425.95" y2="457.13"/>
+    <line class="s" x1="425.95" y1="476.97" x2="454.29" y2="476.97"/>
+    <polygon class="s" points="482.64 476.97 482.64 502.48 397.6 502.48 397.6 434.45 454.29 434.45 454.29 476.97 482.64 476.97"/>
+    <!-- 걸_ㅓ -->
+    <line class="s" x1="459.96" y1="411.77" x2="454.29" y2="411.77"/>
+    <line class="s" x1="459.96" y1="434.45" x2="454.29" y2="434.45"/>
+    <rect class="s" x="454.29" y="389.1" width="28.35" height="87.86"/>
+    <!-- 걸_ㄱ -->
+    <line class="s" x1="429.96" y1="407.76" x2="425.95" y2="411.77"/>
+    <polygon class="s" points="454.29 389.1 454.29 434.45 425.95 434.45 425.95 411.77 397.6 411.77 397.6 389.1 454.29 389.1"/>
+  </g>
+
+  <!-- ── EH (예) ──────────────────────────────────── -->
+  <g>
+    <!-- 예_사탕 (blue) -->
+    <rect fill="#61bcea" x="400.44" y="321.06" width="22.68" height="22.68" rx="11.34"/>
+    <!-- 예_ㅔ -->
+    <line class="s" x1="431.62" y1="321.06" x2="425.95" y2="321.06"/>
+    <line class="s" x1="431.62" y1="343.74" x2="425.95" y2="343.74"/>
+    <rect class="s" x="454.29" y="275.71" width="28.35" height="113.39"/>
+    <rect class="s" x="425.95" y="275.71" width="28.35" height="113.39"/>
+    <!-- 에_ㅇ -->
+    <line class="s" x1="411.77" y1="318.23" x2="411.77" y2="346.58"/>
+    <path class="s" d="M411.77,275.71h14.17v99.21c0,7.82-6.35,14.17-14.17,14.17h-14.17v-99.21c0-7.82,6.35-14.17,14.17-14.17Z"/>
+  </g>
+
+  <!-- ── MOK (목) ─── 핵심 인터랙션 ───────────────── -->
+  <g>
+    <!-- 목_ㄱ (하단 고정 꺾임) -->
+    <line class="s" x1="373.26" y1="592.02" x2="369.25" y2="596.03"/>
+    <polygon class="s" points="397.59 570.52 397.59 615.87 369.25 615.87 369.25 596.03 312.56 596.03 312.56 570.52 397.59 570.52"/>
+
+    <!-- 목_ㅁ 눈 점 두 개 -->
+    <line class="s" x1="340.91" y1="298.39" x2="340.91" y2="304.06"/>
+    <line class="s" x1="369.25" y1="298.39" x2="369.25" y2="304.06"/>
+    <line class="s" x1="340.91" y1="301.22" x2="369.25" y2="301.22"/>
+    <rect class="d" x="346.58" y="291.3" width="1.42" height="1.42"/>
+    <rect class="d" x="362.17" y="291.3" width="1.42" height="1.42"/>
+
+    <!-- 목_모: 볼 위치에 반응하는 동적 벽 -->
+    <path id="reactive-wall" class="s"
+      d="M369.25,321.06v88.16c0,4.18,1.51,8.16,4.01,11.5,5.83,7.79,5.83,19.65,0,27.44-2.5,3.34-4.01,7.33-4.01,11.51v88.16h28.35v22.68h-85.04v-22.68h28.34v-88.2c0-4.16-1.5-8.13-3.99-11.46-5.81-7.76-5.84-19.66-.01-27.45,2.5-3.35,4.01-7.33,4.01-11.5v-88.16h-28.34v-45.35h85.04v45.35h-28.35Z"/>
+
+    <!-- 초록 볼 (드래그 대상 - 오프닝부터 초록색 고정) -->
+    <rect id="ball-mok3" fill="hsl(140, 100%, 50%)"
+          x="343.74" y="423.11"
+          width="22.68" height="22.68"
+          rx="11.34" ry="11.34"/>
+  </g>
+
+
+</svg>
+</section>
+<section class="details" id="details" aria-label="전시 초대와 안내">
+<p class="eyebrow">Stuck in a Throat</p>
+<h1>목에 걸린<br>사탕</h1>
+<p class="invitation" id="typed-invitation"><span class="pink">제 목에 걸린 사탕</span>을 <span class="green">빼주실 분</span>을 <span class="highlight">초대합니다.</span><br>오래 준비한 이야기를 DDP에서 함께 나누고 싶습니다.</p>
+<div class="meta"><span class="meta-label">장소</span><p><strong>동대문 디지털 플라자</strong><br>DDP 아트홀 2관 A-29</p><span class="meta-label">날짜</span><p><strong>2026. 12. 01 – 12. 05</strong></p><span class="meta-label">시간</span><p>12. 01 (Tue) – 12. 04 (Fri)<br><strong>10:00 – 20:00</strong><br>12. 05 (Sat)<br><strong>10:00 – 18:00</strong></p></div>
+<p class="signature">홍익대학교 디자인컨버전스학부</p>
+</section>
+</main>
+<audio id="typing-sound" src="assets/typing.mp3" preload="auto" loop></audio>
+<audio id="pop-sound" src="assets/pop.mp3" preload="auto"></audio>
+<audio id="whoosh-sound" src="assets/whoosh.mp3" preload="auto"></audio>
+<script>
+const stage=document.getElementById('stage');
+const title=document.getElementById('main-svg');
+const details=document.getElementById('details');
+const typingSound=document.getElementById('typing-sound');
+const popSound=document.getElementById('pop-sound');
+const whooshSound=document.getElementById('whoosh-sound');
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let soundEnabled=false;
+function enableSound(){soundEnabled=true;document.removeEventListener('pointerdown',enableSound)}
+document.addEventListener('pointerdown',enableSound,{once:true});
+function play(audio,volume){if(!soundEnabled)return;audio.volume=volume;audio.currentTime=0;audio.play().catch(()=>{})}
+const candyRects=[...title.querySelectorAll('g > rect[rx]')].filter(el=>el.getAttribute('fill'));
+const candies=candyRects.map(el=>{const clone=el.cloneNode(true);clone.removeAttribute('id');clone.classList.add('candy');title.appendChild(clone);el.style.visibility='hidden';return clone});
+const colors=['#84c779','#f04f2c','#db58a0','#faed28','#61bcea','#9a70b6'];
+function burst(rect,color,seed){const box=rect.getBoundingClientRect();const x=box.left+box.width/2,y=box.top+box.height/2;for(let i=0;i<18;i++){const dot=document.createElement('i');dot.className='confetti';const s=4+(i%4)*2;dot.style.cssText=`left:${x}px;top:${y}px;width:${s}px;height:${s}px;background:${colors[(i+seed)%colors.length]}`;document.body.appendChild(dot);const angle=(i/18)*Math.PI*2+seed*.35;const distance=85+((i*29+seed*19)%145);dot.animate([{transform:'translate(-50%,-50%) scale(1)',opacity:1},{transform:`translate(calc(-50% + ${Math.cos(angle)*distance}px),calc(-50% + ${Math.sin(angle)*distance+65}px)) scale(.5)`,opacity:0}],{duration:1100+(i%4)*150,easing:'cubic-bezier(.15,.6,.25,1)',fill:'forwards'}).onfinish=()=>dot.remove()}}
+function wrapTyped(node){const children=[...node.childNodes];for(const child of children){if(child.nodeType===3){const frag=document.createDocumentFragment();for(const char of child.textContent){const span=document.createElement('span');span.className='type-char';span.textContent=char;frag.appendChild(span)}child.replaceWith(frag)}else if(child.nodeType===1&&child.tagName!=='BR')wrapTyped(child)}}
+const typed=document.getElementById('typed-invitation');wrapTyped(typed);
+const chars=[...typed.querySelectorAll('.type-char')];
+function startTyping(){details.classList.add('visible');if(reduceMotion){chars.forEach(c=>c.classList.add('shown'));return}if(soundEnabled){typingSound.volume=.5;typingSound.playbackRate=1.5;typingSound.currentTime=0;typingSound.play().catch(()=>{})}let n=0;const timer=setInterval(()=>{for(let j=0;j<2&&n<chars.length;j++)chars[n++].classList.add('shown');if(n>=chars.length){clearInterval(timer);typingSound.pause()}},38)}
+function run(){if(reduceMotion){stage.classList.add('gone');startTyping();return}setTimeout(()=>stage.classList.add('open'),650);setTimeout(()=>{play(whooshSound,.45);candies.forEach((c,i)=>{const dx=[-32,30,38,-30,-48,44][i],dy=[-90,54,-40,30,-45,75][i];c.animate([{transform:'translate(0,0) scale(1)',opacity:1},{transform:`translate(${dx}px,${dy}px) scale(1.35)`,opacity:1},{transform:`translate(${dx*1.35}px,${dy*1.25}px) scale(.35)`,opacity:0}],{duration:760,delay:i*85,easing:'cubic-bezier(.2,.8,.2,1)',fill:'forwards'});setTimeout(()=>{burst(c,c.getAttribute('fill'),i);play(popSound,.28)},420+i*85)})},1550);setTimeout(()=>{stage.classList.add('gone');startTyping()},2750)}
+run();
+</script>
+</body>
+</html>
