@@ -35,7 +35,8 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 .detail-box{border:1.25px solid #231f20;padding:15px 16px;background:#f4f4f6}
 .section-label{display:block;font-size:12px;font-weight:650;line-height:1.2;margin-bottom:12px;letter-spacing:.01em}
 .final-members-text{text-align:left}
-.final-members-text>div:last-child{font-size:12px!important;line-height:1.6!important}
+.participant-list{font-size:13px;line-height:1.6;font-weight:550;color:#333}
+#final-info-text{font-weight:600;line-height:1.55}.info-time{font-size:13px;font-weight:550;color:#444}
 .final-cta-wrap{display:grid;gap:7px}
 .final-cta-btn{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:10px 14px;background:#231f20;color:#fff;text-decoration:none;border-radius:0;font-weight:750;font-size:14px;border:none;box-shadow:none;visibility:hidden;pointer-events:none}
 .final-cta-btn.visible{visibility:visible;pointer-events:auto}
@@ -215,9 +216,9 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 <audio id="pop-audio" src="assets/pop.mp3" preload="auto"></audio>
 <audio id="whoosh-audio" src="assets/whoosh.mp3" preload="auto"></audio>
 <script>
-const FINAL_MAIN_HTML = `<span style="background:#e4007f;color:#fff;padding:0.2px 2px;">제 목에 걸린 사탕</span>을 <span style="color:#8cc63f">빼주실 분</span>을 <span style="background:#fff100;color:#000;padding:0.2px 2px;">초대합니다.</span><br/><br/><span style="color:#e60012">오래</span> 준비한 <span style="color:#e60012">이야기</span>들을 드디어 <span style="background:#8cc63f;color:#000;padding:0.2px 2px;">DDP</span>에 <span style="background:#fff100;color:#000;padding:0.2px 2px;">꺼내놓습니다.</span> 이제 <span style="color:#8cc63f">정말</span> 끝이라고 <span style="color:#00a1e9">생각</span>했습니다. <span style="color:#8cc63f">그런데</span> 보여드리고 싶은 건 <span style="background:#66c0f4;color:#000;padding:0.2px 2px;">아직</span> 많더라고요. 그래서 <span style="background:#e4007f;color:#fff;padding:0.2px 2px;">준비했습니다.</span> 한 번쯤 꼭 <span style="background:#f37021;color:#fff;padding:0.2px 2px;">보러</span> 와주세요...`;
-const FINAL_INFO_HTML = `<span style="color:#e60012">홍익대학교</span> 디자인컨버전스학부 <span style="background:#8cc63f;color:#000;padding:0.2px 2px;">DDP</span> <span style="background:#fff100;color:#e4007f;padding:0.2px 2px;">졸업전시</span><br/><span style="background:#8cc63f;color:#000;padding:0.2px 2px;">2026. 12. 01–12. 05</span> / 12.01–12.04 10:00–20:00 / 12.05 10:00–18:00 <span style="background:#66c0f4;color:#000;padding:0.2px 2px;">DDP 아트홀 2관 A-29</span>`;
-const FINAL_MEMBERS_HTML = `<div style="font-weight:800;margin-bottom:6px;color:#231f20;background:#fff100;display:inline-block;padding:2px 7px;border-radius:4px;font-size:clamp(13.5px, 3.5cqw, 16px);">참여자</div><div style="font-size:clamp(11.5px, 3.0cqw, 14px);line-height:1.75;color:#333333;font-weight:600;margin-top:4px;">강예은 · 김서윤 · 김예준 · 김주희 · 김창래 · 김희서 · 모소연 · 박시형 · 박정연 · 박지혜 · 손예림 · 양서경 · 왕은빈 · 이채빈 · 장지혁 · 정규태 · 조유정 · 진아름 · 황예은</div>`;
+const FINAL_MAIN_HTML = `<span style="background:#e4007f;color:#fff;padding:0.2px 2px;">제 목에 걸린 사탕</span>을 <span style="color:#8cc63f">함께 꺼내주실 여러분</span>을 <span style="background:#fff100;color:#000;padding:0.2px 2px;">초대합니다.</span><br/><br/><span style="color:#e60012">오랜 시간</span> 준비한 이야기들을 <span style="background:#8cc63f;color:#000;padding:0.2px 2px;">DDP</span>에서 <span style="background:#fff100;color:#000;padding:0.2px 2px;">선보입니다.</span> 끝이라고 생각한 뒤에도 <span style="color:#00a1e9">전하고 싶은 이야기</span>가 남아 있었습니다. 귀한 걸음으로 <span style="background:#e4007f;color:#fff;padding:0.2px 2px;">함께해 주시면</span> <span style="background:#f37021;color:#fff;padding:0.2px 2px;">감사하겠습니다.</span>`;
+const FINAL_INFO_HTML = `<strong>DDP 아트홀 2관 A-29</strong><br/>2026. 12. 01 – 12. 05<br/><span class="info-time">12.01–12.04 10:00–20:00<br/>12.05 10:00–18:00</span>`;
+const FINAL_MEMBERS_HTML = `<div class="section-label">참여자</div><div class="participant-list">강예은 · 강지혜 · 김서윤 · 김유빈 · 김주희 · 김창래 · 김해준 · 김희서 · 모소연 · 박지호 · 방태림 · 서유정 · 손예림 · 양서경 · 이채빈 · 전승아 · 정규태 · 진아름 · 최성근 · 황예은</div>`;
 const screen=document.getElementById('phone-screen');
 const opening=document.getElementById('opening');
 const svg=document.getElementById('main-svg');
