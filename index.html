@@ -5,47 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
 <title>목에 걸린 사탕 — 2026 DDP 졸업전시 초대장</title>
-<meta name="description" content="홍익대학교 디자인컨버전스학부 2026 DDP 졸업전시, 목에 걸린 사탕. 12월 1일부터 5일까지 DDP 아트홀 2관 A-29.">
+<meta name="description" content="홍익대학교 디자인컨버전스학부 2026 DDP 졸업전시 모바일 초대장">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..900&display=swap" rel="stylesheet">
 <style>
-:root{font-family:'Google Sans Flex',sans-serif;color:#0f1718;background:#fff;font-synthesis:none}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;overflow-x:hidden}body{min-height:100svh}
-.invite{min-height:100svh;position:relative;overflow:hidden;background:#fff}
-.masthead{position:absolute;z-index:4;top:max(28px,env(safe-area-inset-top));left:clamp(24px,7vw,48px);right:clamp(24px,7vw,48px);display:flex;justify-content:space-between;gap:20px;font-size:clamp(12px,2.7vw,16px);line-height:1.28;letter-spacing:-.025em;font-weight:520}
-.masthead p{margin:0}.masthead p:last-child{text-align:right}
-.stage{position:absolute;inset:0;display:grid;place-items:center;transition:opacity .6s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
-.stage::before{content:'';position:absolute;inset:0;opacity:.5;background-image:linear-gradient(#eff0f1 1px,transparent 1px),linear-gradient(90deg,#eff0f1 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(transparent 8%,#000 38%,#000 78%,transparent 96%)}
-#main-svg{position:relative;width:min(70vw,380px);height:min(67svh,600px);overflow:visible;filter:drop-shadow(0 0 0 transparent)}
-#main-svg>g{transform-box:fill-box;transform-origin:center;transition:transform 1.05s cubic-bezier(.23,.72,.22,1)}
-.stage.open #main-svg>g:nth-of-type(1){transform:translate(34px,8px) rotate(4deg)}
-.stage.open #main-svg>g:nth-of-type(2){transform:translate(-32px,18px) rotate(-3deg)}
-.stage.open #main-svg>g:nth-of-type(3){transform:translate(31px,-16px) rotate(3deg)}
-.stage.open #main-svg>g:nth-of-type(4){transform:translate(-31px,-19px) rotate(-4deg)}
-.stage.open #main-svg>g:nth-of-type(5){transform:translate(-19px,-22px) rotate(-3deg)}
-.stage.open #main-svg>g:nth-of-type(6){transform:translate(-42px,12px) rotate(-3deg)}
-.stage.gone{opacity:0;transform:scale(1.06);pointer-events:none}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;font-family:'Google Sans Flex',sans-serif;color:#0f1718}
+body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
+.phone-frame{width:min(390px,calc((100svh - 48px)*.462085),calc(100vw - 48px));aspect-ratio:390/844;border:1.5px solid #505657;border-radius:27px;padding:7px;background:#fff;box-shadow:0 18px 60px #23303320;overflow:hidden}
+.phone-screen{position:relative;width:100%;height:100%;overflow:hidden;border-radius:19px;background:#fff;isolation:isolate;container-type:inline-size}
+.opening{position:absolute;inset:0;overflow:hidden;background:#fff;z-index:1;transition:opacity .55s ease}
+.poster-grid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;pointer-events:none}
+.topline{position:absolute;z-index:2;top:5.1%;left:7%;right:7%;display:flex;justify-content:space-between;gap:12px;font-size:clamp(11px,1.7svh,14px);line-height:1.33;letter-spacing:-.025em;font-weight:520}
+.topline p{margin:0}.topline p:last-child{text-align:right}
+#main-svg{position:absolute;width:88%;height:74%;left:6%;top:16%;overflow:visible;z-index:2}
+#main-svg>g{transform-box:fill-box;transform-origin:center;transition:transform 1.1s cubic-bezier(.2,.74,.2,1)}
+.opening.open #main-svg>g:nth-of-type(1){transform:translate(43px,28px)}
+.opening.open #main-svg>g:nth-of-type(2){transform:translate(-52px,32px)}
+.opening.open #main-svg>g:nth-of-type(3){transform:translate(45px,-35px)}
+.opening.open #main-svg>g:nth-of-type(4){transform:translate(-51px,-20px)}
+.opening.open #main-svg>g:nth-of-type(5){transform:translate(-49px,-30px)}
+.opening.open #main-svg>g:nth-of-type(6){transform:translate(-57px,18px)}
 .candy{transform-box:fill-box;transform-origin:center;will-change:transform,opacity}
-.confetti{position:fixed;pointer-events:none;z-index:8;border-radius:50%;will-change:transform,opacity}
-.details{position:relative;z-index:3;min-height:100svh;padding:max(126px,calc(env(safe-area-inset-top) + 122px)) clamp(28px,8vw,54px) max(36px,env(safe-area-inset-bottom));display:flex;flex-direction:column;justify-content:center;max-width:580px;margin:auto;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s}
-.details.visible{opacity:1;visibility:visible}
-.eyebrow{font-size:clamp(13px,3vw,16px);font-weight:550;letter-spacing:.01em;margin:0 0 16px}
-h1{font-size:clamp(47px,13vw,82px);font-weight:650;letter-spacing:-.09em;line-height:1.05;margin:0 0 28px;word-break:keep-all}
-.invitation{font-size:clamp(19px,5.1vw,25px);line-height:1.58;font-weight:520;letter-spacing:-.035em;margin:0 0 32px;word-break:keep-all;min-height:5em}
-.highlight{background:#faed28;color:#111;padding:0 .08em}.pink{background:#db58a0;color:#fff}.green{color:#319e79}
-.type-char{visibility:hidden}.type-char.shown{visibility:visible}
-.meta{border-top:1.5px solid #111;padding-top:16px;display:grid;grid-template-columns:62px 1fr;gap:14px 16px;font-size:clamp(15px,3.7vw,18px);line-height:1.38;letter-spacing:-.025em}
-.meta-label{font-size:13px;font-weight:600;padding-top:2px}.meta p{margin:0}.meta strong{font-weight:650}.meta small{font-size:.83em;color:#50595a}
-.signature{margin-top:30px;font-size:clamp(14px,3.3vw,16px);line-height:1.4;font-weight:550;letter-spacing:-.025em}
-@media (max-height:700px){.details{justify-content:flex-start;padding-top:110px}.invitation{min-height:0}h1{font-size:clamp(43px,11vw,64px)}}
-@media (prefers-reduced-motion:reduce){#main-svg>g,.stage,.details{transition:none!important}.type-char{visibility:visible}}
+.confetti{position:absolute;z-index:6;pointer-events:none;will-change:transform,opacity}
+.final-screen{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;overflow-y:auto;padding:36px 32px;background:#f4f4f6;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s ease}
+.final-screen.visible{opacity:1;visibility:visible}
+.final-text-box{color:#231f20;font-family:'Google Sans Flex',sans-serif;width:100%;text-align:justify;word-break:break-all;line-height:1.7;font-size:clamp(14px,3.8cqw,18.5px);font-weight:700;user-select:none;margin:auto}
+.final-members-text{margin-top:24px;text-align:center}
+.final-cta-wrap{margin-top:26px;text-align:center}
+.final-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 26px;background:#231f20;color:#fff;text-decoration:none;border-radius:4px;font-weight:800;font-size:clamp(13px,3.4cqw,14.5px);border:none;box-shadow:none;opacity:0;pointer-events:none;transition:opacity .6s ease}
+.final-cta-btn.visible{opacity:1;pointer-events:auto}
+.fch{display:none}
+@media(max-width:600px){body{display:block;background:#fff}.phone-frame{width:100vw;height:100svh;aspect-ratio:auto;border:0;border-radius:0;padding:0;box-shadow:none}.phone-screen{border-radius:0}}
+@media(prefers-reduced-motion:reduce){#main-svg>g,.opening,.final-screen{transition:none!important}}
 </style>
 </head>
 <body>
-<main class="invite">
-<header class="masthead"><p>2026 DDP<br>Design Graduation<br>Exhibition</p><p>HIDC Hongik Univ.<br>Design Convergence</p></header>
-<section class="stage" id="stage" aria-label="목에 걸린 사탕 로고가 움직이고 사탕이 빠져나옵니다">
+<div class="phone-frame" aria-label="모바일 초대장 미리보기">
+<main class="phone-screen" id="phone-screen">
+<section class="opening" id="opening" aria-label="목에 걸린 사탕 오프닝">
+<img class="poster-grid" src="assets/poster-grid.svg" alt="">
+<header class="topline"><p>2026 DDP<br>Design Graduation<br>Exhibition</p><p>HIDC Hongik Univ.<br>Design Convergence</p></header>
 <svg id="main-svg"
      viewBox="308 272 264 347"
      xmlns="http://www.w3.org/2000/svg">
@@ -168,38 +169,42 @@ h1{font-size:clamp(47px,13vw,82px);font-weight:650;letter-spacing:-.09em;line-he
 
 </svg>
 </section>
-<section class="details" id="details" aria-label="전시 초대와 안내">
-<p class="eyebrow">Stuck in a Throat</p>
-<h1>목에 걸린<br>사탕</h1>
-<p class="invitation" id="typed-invitation"><span class="pink">제 목에 걸린 사탕</span>을 <span class="green">빼주실 분</span>을 <span class="highlight">초대합니다.</span><br>오래 준비한 이야기를 DDP에서 함께 나누고 싶습니다.</p>
-<div class="meta"><span class="meta-label">장소</span><p><strong>동대문 디지털 플라자</strong><br>DDP 아트홀 2관 A-29</p><span class="meta-label">날짜</span><p><strong>2026. 12. 01 – 12. 05</strong></p><span class="meta-label">시간</span><p>12. 01 (Tue) – 12. 04 (Fri)<br><strong>10:00 – 20:00</strong><br>12. 05 (Sat)<br><strong>10:00 – 18:00</strong></p></div>
-<p class="signature">홍익대학교 디자인컨버전스학부</p>
+<section class="final-screen" id="final-screen" aria-label="전시 초대와 안내">
+<div class="final-text-box"><div id="final-main-text"></div><div id="final-members-text" class="final-members-text"></div><div class="final-cta-wrap"><a id="final-cta-btn" class="final-cta-btn" href="https://ddp.or.kr/?menuno=240" target="_blank" rel="noopener noreferrer"><span>더 알아보기</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
 </section>
 </main>
-<audio id="typing-sound" src="assets/typing.mp3" preload="auto" loop></audio>
-<audio id="pop-sound" src="assets/pop.mp3" preload="auto"></audio>
-<audio id="whoosh-sound" src="assets/whoosh.mp3" preload="auto"></audio>
+</div>
+<audio id="typing-audio" src="assets/typing.mp3" preload="auto" loop></audio>
+<audio id="pop-audio" src="assets/pop.mp3" preload="auto"></audio>
+<audio id="whoosh-audio" src="assets/whoosh.mp3" preload="auto"></audio>
 <script>
-const stage=document.getElementById('stage');
-const title=document.getElementById('main-svg');
-const details=document.getElementById('details');
-const typingSound=document.getElementById('typing-sound');
-const popSound=document.getElementById('pop-sound');
-const whooshSound=document.getElementById('whoosh-sound');
-const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINAL_MAIN_HTML = `<span style="background:#e4007f;color:#fff;padding:0.2px 2px;">제 목에 걸린 사탕</span>을 <span style="color:#8cc63f">빼주실 분</span>을 <span style="background:#fff100;color:#000;padding:0.2px 2px;">초대합니다.</span><br/><br/><span style="color:#e60012">오래</span> 준비한 <span style="color:#e60012">이야기</span>들을 드디어 <span style="background:#8cc63f;color:#000;padding:0.2px 2px;">DDP</span>에 <span style="background:#fff100;color:#000;padding:0.2px 2px;">꺼내놓습니다.</span> 이제 <span style="color:#8cc63f">정말</span> 끝이라고 <span style="color:#00a1e9">생각</span>했습니다. <span style="color:#8cc63f">그런데</span> 보여드리고 싶은 건 <span style="background:#66c0f4;color:#000;padding:0.2px 2px;">아직</span> 많더라고요. 그래서 <span style="background:#e4007f;color:#fff;padding:0.2px 2px;">준비했습니다.</span> 한 번쯤 꼭 <span style="background:#f37021;color:#fff;padding:0.2px 2px;">보러</span> 와주세요...<br/><br/><span style="color:#e60012">홍익대학교</span> 디자인컨버전스학부 <span style="background:#8cc63f;color:#000;padding:0.2px 2px;">DDP</span> <span style="background:#fff100;color:#e4007f;padding:0.2px 2px;">졸업전시</span><br/><span style="background:#8cc63f;color:#000;padding:0.2px 2px;">2026. 12. 01–12. 05</span> / 12.01–12.04 10:00–20:00 / 12.05 10:00–18:00 <span style="background:#66c0f4;color:#000;padding:0.2px 2px;">DDP 아트홀 2관 A-29</span>`;
+const FINAL_MEMBERS_HTML = `<div style="font-weight:800;margin-bottom:6px;color:#231f20;background:#fff100;display:inline-block;padding:2px 7px;border-radius:4px;font-size:clamp(13.5px, 3.5cqw, 16px);">참여자</div><div style="font-size:clamp(11.5px, 3.0cqw, 14px);line-height:1.75;color:#333333;font-weight:600;margin-top:4px;">강예은 · 김서윤 · 김예준 · 김주희 · 김창래 · 김희서 · 모소연 · 박시형 · 박정연 · 박지혜 · 손예림 · 양서경 · 왕은빈 · 이채빈 · 장지혁 · 정규태 · 조유정 · 진아름 · 황예은</div>`;
+const screen=document.getElementById('phone-screen');
+const opening=document.getElementById('opening');
+const svg=document.getElementById('main-svg');
+const finalScreen=document.getElementById('final-screen');
+const typeAudio=document.getElementById('typing-audio');
+const popAudio=document.getElementById('pop-audio');
+const whooshAudio=document.getElementById('whoosh-audio');
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let soundEnabled=false;
-function enableSound(){soundEnabled=true;document.removeEventListener('pointerdown',enableSound)}
+function enableSound(){soundEnabled=true;document.removeEventListener('pointerdown',enableSound);if(finalScreen.classList.contains('visible')&&finalChars.some(c=>c.style.display==='none'))typeAudio.play().catch(()=>{})}
 document.addEventListener('pointerdown',enableSound,{once:true});
-function play(audio,volume){if(!soundEnabled)return;audio.volume=volume;audio.currentTime=0;audio.play().catch(()=>{})}
-const candyRects=[...title.querySelectorAll('g > rect[rx]')].filter(el=>el.getAttribute('fill'));
-const candies=candyRects.map(el=>{const clone=el.cloneNode(true);clone.removeAttribute('id');clone.classList.add('candy');title.appendChild(clone);el.style.visibility='hidden';return clone});
-const colors=['#84c779','#f04f2c','#db58a0','#faed28','#61bcea','#9a70b6'];
-function burst(rect,color,seed){const box=rect.getBoundingClientRect();const x=box.left+box.width/2,y=box.top+box.height/2;for(let i=0;i<18;i++){const dot=document.createElement('i');dot.className='confetti';const s=4+(i%4)*2;dot.style.cssText=`left:${x}px;top:${y}px;width:${s}px;height:${s}px;background:${colors[(i+seed)%colors.length]}`;document.body.appendChild(dot);const angle=(i/18)*Math.PI*2+seed*.35;const distance=85+((i*29+seed*19)%145);dot.animate([{transform:'translate(-50%,-50%) scale(1)',opacity:1},{transform:`translate(calc(-50% + ${Math.cos(angle)*distance}px),calc(-50% + ${Math.sin(angle)*distance+65}px)) scale(.5)`,opacity:0}],{duration:1100+(i%4)*150,easing:'cubic-bezier(.15,.6,.25,1)',fill:'forwards'}).onfinish=()=>dot.remove()}}
-function wrapTyped(node){const children=[...node.childNodes];for(const child of children){if(child.nodeType===3){const frag=document.createDocumentFragment();for(const char of child.textContent){const span=document.createElement('span');span.className='type-char';span.textContent=char;frag.appendChild(span)}child.replaceWith(frag)}else if(child.nodeType===1&&child.tagName!=='BR')wrapTyped(child)}}
-const typed=document.getElementById('typed-invitation');wrapTyped(typed);
-const chars=[...typed.querySelectorAll('.type-char')];
-function startTyping(){details.classList.add('visible');if(reduceMotion){chars.forEach(c=>c.classList.add('shown'));return}if(soundEnabled){typingSound.volume=.5;typingSound.playbackRate=1.5;typingSound.currentTime=0;typingSound.play().catch(()=>{})}let n=0;const timer=setInterval(()=>{for(let j=0;j<2&&n<chars.length;j++)chars[n++].classList.add('shown');if(n>=chars.length){clearInterval(timer);typingSound.pause()}},38)}
-function run(){if(reduceMotion){stage.classList.add('gone');startTyping();return}setTimeout(()=>stage.classList.add('open'),650);setTimeout(()=>{play(whooshSound,.45);candies.forEach((c,i)=>{const dx=[-32,30,38,-30,-48,44][i],dy=[-90,54,-40,30,-45,75][i];c.animate([{transform:'translate(0,0) scale(1)',opacity:1},{transform:`translate(${dx}px,${dy}px) scale(1.35)`,opacity:1},{transform:`translate(${dx*1.35}px,${dy*1.25}px) scale(.35)`,opacity:0}],{duration:760,delay:i*85,easing:'cubic-bezier(.2,.8,.2,1)',fill:'forwards'});setTimeout(()=>{burst(c,c.getAttribute('fill'),i);play(popSound,.28)},420+i*85)})},1550);setTimeout(()=>{stage.classList.add('gone');startTyping()},2750)}
+function play(audio,volume){if(!soundEnabled)return;try{const a=audio.cloneNode();a.volume=volume;a.play().catch(()=>{})}catch(e){}}
+function triggerHaptic(){if('vibrate' in navigator)navigator.vibrate(6)}
+function wrapFinalNodes(node){let result='';node.childNodes.forEach(child=>{if(child.nodeType===3){for(const ch of child.textContent)result+=`<span class="fch" style="display:none;">${ch==='<'?'&lt;':ch==='&'?'&amp;':ch}</span>`}else if(child.nodeType===1){const tag=child.tagName.toLowerCase();if(tag==='br')result+='<br/>';else{let attrs='';for(const attr of child.attributes)attrs+=` ${attr.name}="${attr.value}"`;result+=`<${tag}${attrs}>${wrapFinalNodes(child)}</${tag}>`}}});return result}
+const tempMain=document.createElement('div');tempMain.innerHTML=FINAL_MAIN_HTML;document.getElementById('final-main-text').innerHTML=wrapFinalNodes(tempMain);
+const tempMemb=document.createElement('div');tempMemb.innerHTML=FINAL_MEMBERS_HTML;document.getElementById('final-members-text').innerHTML=wrapFinalNodes(tempMemb);
+const finalChars=[...document.querySelectorAll('.fch')];
+function startFinalTyping(){finalScreen.classList.add('visible');if(reducedMotion){finalChars.forEach(c=>c.style.display='inline');document.getElementById('final-cta-btn').classList.add('visible');return}if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].style.display='inline';triggerHaptic();fIdx++}else{clearInterval(timer);typeAudio.pause();typeAudio.loop=false;document.getElementById('final-cta-btn').classList.add('visible')}},38)}
+const candyRects=[...svg.querySelectorAll('g > rect[rx]')].filter(el=>el.getAttribute('fill'));
+const candies=candyRects.map(el=>{const clone=el.cloneNode(true);clone.removeAttribute('id');clone.classList.add('candy');svg.appendChild(clone);el.style.visibility='hidden';return clone});
+const trails=[[[0,0],[0,-24],[29,-24],[29,-67],[72,-67],[100,-110]],[[0,0],[0,-27],[0,-48],[-45,-48],[-45,-94],[-95,-94]],[[0,0],[0,26],[30,26],[30,-20],[75,-20],[105,-85]],[[0,0],[28,0],[28,26],[68,26],[68,-30],[110,-60]],[[0,0],[0,-27],[42,-27],[42,-68],[91,-68],[130,-110]],[[0,0],[0,-32],[0,-91],[-39,-91],[-39,-153],[-88,-184]]];
+const palette=['#84c779','#f04f2c','#db58a0','#faed28','#61bcea','#9a70b6'];
+function scatter(rect,seed){const screenBox=screen.getBoundingClientRect(),box=rect.getBoundingClientRect(),x=box.left+box.width/2-screenBox.left,y=box.top+box.height/2-screenBox.top;const w=screen.clientWidth,h=screen.clientHeight;for(let i=0;i<42;i++){const piece=document.createElement('i');piece.className='confetti';const size=5+(i%4)*2;piece.style.cssText=`left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:${i%3===0?'2px':'50%'};background:${palette[(i+seed)%palette.length]}`;screen.appendChild(piece);const col=(i*17+seed*11)%14,row=(i*7+seed*13)%18;const endX=(col+.5)/14*w,endY=(row+.5)/18*h;piece.animate([{transform:'translate(-50%,-50%) scale(.4)',opacity:1,offset:0},{transform:`translate(${endX-x}px,${endY-y}px) scale(1)`,opacity:1,offset:.7},{transform:`translate(${endX-x}px,${endY-y+35}px) scale(.7)`,opacity:0,offset:1}],{duration:1500+(i%5)*90,easing:'cubic-bezier(.14,.65,.27,1)',fill:'forwards'}).onfinish=()=>piece.remove()}}
+function release(){play(whooshAudio,.5);candies.forEach((ball,i)=>{const points=trails[i],frames=points.map((p,j)=>({transform:`translate(${p[0]}px,${p[1]}px) scale(${j===points.length-1?1.2:1})`,opacity:j===points.length-1?0:1,offset:j/(points.length-1)}));ball.animate(frames,{duration:1050,delay:i*135,easing:'linear',fill:'forwards'});setTimeout(()=>{scatter(ball,i);play(popAudio,.5)},800+i*135)})}
+function run(){const preview=new URLSearchParams(location.search).get('preview');if(preview==='opening')return;if(preview==='final'){opening.style.opacity='0';finalScreen.classList.add('visible');finalChars.forEach(c=>c.style.display='inline');document.getElementById('final-cta-btn').classList.add('visible');return}if(reducedMotion){opening.style.opacity='0';startFinalTyping();return}setTimeout(()=>opening.classList.add('open'),600);setTimeout(release,1550);setTimeout(()=>{opening.style.opacity='0';startFinalTyping()},3550)}
 run();
 </script>
 </body>
