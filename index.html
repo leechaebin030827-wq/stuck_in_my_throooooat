@@ -29,13 +29,16 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 .opening.converged #poster-letters>g:nth-of-type(6){transform:translate(-369px,38px)}
 .candy{transform-box:fill-box;transform-origin:center;will-change:transform}
 .confetti{position:absolute;z-index:6;pointer-events:none;will-change:transform}
-.final-screen{position:absolute;inset:0;z-index:4;display:none;align-items:center;justify-content:center;overflow-y:auto;padding:36px 32px;background:#f4f4f6}
+.final-screen{position:absolute;inset:0;z-index:4;display:none;align-items:flex-start;justify-content:flex-start;overflow-y:auto;padding:26px 20px;background:#f4f4f6}
 .final-screen.visible{display:flex}
-.final-text-box{color:#231f20;font-family:'Google Sans Flex',sans-serif;width:100%;text-align:justify;word-break:break-all;line-height:1.7;font-size:clamp(14px,3.8cqw,18.5px);font-weight:700;user-select:none;margin:auto}
-.final-members-text{margin-top:24px;text-align:center}
-.final-cta-wrap{margin-top:26px;text-align:center}
-.final-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 26px;background:#231f20;color:#fff;text-decoration:none;border-radius:4px;font-weight:800;font-size:clamp(13px,3.4cqw,14.5px);border:none;box-shadow:none;opacity:0;pointer-events:none;transition:opacity .6s ease}
-.final-cta-btn.visible{opacity:1;pointer-events:auto}
+.final-text-box{color:#231f20;font-family:'Google Sans Flex',sans-serif;width:100%;display:grid;gap:10px;text-align:left;word-break:keep-all;line-height:1.6;font-size:clamp(14px,3.8cqw,18.5px);font-weight:700;user-select:none;margin:0}
+.detail-box{border:1.25px solid #231f20;padding:15px 16px;background:#f4f4f6}
+.section-label{display:block;font-size:12px;font-weight:650;line-height:1.2;margin-bottom:12px;letter-spacing:.01em}
+.final-members-text{text-align:left}
+.final-members-text>div:last-child{font-size:12px!important;line-height:1.6!important}
+.final-cta-wrap{display:grid;gap:7px}
+.final-cta-btn{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:10px 14px;background:#231f20;color:#fff;text-decoration:none;border-radius:0;font-weight:750;font-size:14px;border:none;box-shadow:none;visibility:hidden;pointer-events:none}
+.final-cta-btn.visible{visibility:visible;pointer-events:auto}
 .fch{display:none}
 @media(max-width:600px){body{display:block;background:#fff}.phone-frame{width:100vw;height:100svh;aspect-ratio:auto;border:0;border-radius:0;padding:0;box-shadow:none}.phone-screen{border-radius:0}}
 @media(prefers-reduced-motion:reduce){#poster-letters>g,.opening,.final-screen{transition:none!important}}
@@ -196,7 +199,15 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
   <g id="poster-candies"><circle class="candy" cx="550" cy="355" r="24" fill="#22b3a5" /><circle class="candy" cx="650" cy="520" r="24" fill="#df90bd" /><circle class="candy" cx="965" cy="690" r="24" fill="#ffeb00" /><circle class="candy" cx="840" cy="1080" r="24" fill="#9870ad" /><circle class="candy" cx="500" cy="1260" r="24" fill="#ef5632" /><circle class="candy" cx="700" cy="1560" r="24" fill="#61c4e3" /></g></svg>
 </section>
 <section class="final-screen" id="final-screen" aria-label="전시 초대와 안내">
-<div class="final-text-box"><div id="final-main-text"></div><div id="final-members-text" class="final-members-text"></div><div class="final-cta-wrap"><a id="final-cta-btn" class="final-cta-btn" href="https://ddp.or.kr/?menuno=240" target="_blank" rel="noopener noreferrer"><span>더 알아보기</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+<div class="final-text-box">
+<div id="final-main-text" class="detail-box"></div>
+<div class="detail-box"><span class="section-label">장소 · 일시</span><div id="final-info-text"></div></div>
+<div id="final-members-text" class="final-members-text detail-box"></div>
+<div class="final-cta-wrap detail-box">
+<a class="final-cta-btn" href="https://ddp.or.kr/?menuno=240" target="_blank" rel="noopener noreferrer">DDP 전시 <span aria-hidden="true">↗</span></a>
+<a class="final-cta-btn" href="https://map.naver.com/p/search/%EB%8F%99%EB%8C%80%EB%AC%B8%EB%94%94%EC%9E%90%EC%9D%B8%ED%94%8C%EB%9D%BC%EC%9E%90" target="_blank" rel="noopener noreferrer">오시는 길 <span aria-hidden="true">↗</span></a>
+<a class="final-cta-btn" href="https://www.instagram.com/stuck_in_a_throat/" target="_blank" rel="noopener noreferrer">인스타그램 <span aria-hidden="true">↗</span></a>
+</div></div>
 </section>
 </main>
 </div>
@@ -204,7 +215,8 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 <audio id="pop-audio" src="assets/pop.mp3" preload="auto"></audio>
 <audio id="whoosh-audio" src="assets/whoosh.mp3" preload="auto"></audio>
 <script>
-const FINAL_MAIN_HTML = `<span style="background:#e4007f;color:#fff;padding:0.2px 2px;">제 목에 걸린 사탕</span>을 <span style="color:#8cc63f">빼주실 분</span>을 <span style="background:#fff100;color:#000;padding:0.2px 2px;">초대합니다.</span><br/><br/><span style="color:#e60012">오래</span> 준비한 <span style="color:#e60012">이야기</span>들을 드디어 <span style="background:#8cc63f;color:#000;padding:0.2px 2px;">DDP</span>에 <span style="background:#fff100;color:#000;padding:0.2px 2px;">꺼내놓습니다.</span> 이제 <span style="color:#8cc63f">정말</span> 끝이라고 <span style="color:#00a1e9">생각</span>했습니다. <span style="color:#8cc63f">그런데</span> 보여드리고 싶은 건 <span style="background:#66c0f4;color:#000;padding:0.2px 2px;">아직</span> 많더라고요. 그래서 <span style="background:#e4007f;color:#fff;padding:0.2px 2px;">준비했습니다.</span> 한 번쯤 꼭 <span style="background:#f37021;color:#fff;padding:0.2px 2px;">보러</span> 와주세요...<br/><br/><span style="color:#e60012">홍익대학교</span> 디자인컨버전스학부 <span style="background:#8cc63f;color:#000;padding:0.2px 2px;">DDP</span> <span style="background:#fff100;color:#e4007f;padding:0.2px 2px;">졸업전시</span><br/><span style="background:#8cc63f;color:#000;padding:0.2px 2px;">2026. 12. 01–12. 05</span> / 12.01–12.04 10:00–20:00 / 12.05 10:00–18:00 <span style="background:#66c0f4;color:#000;padding:0.2px 2px;">DDP 아트홀 2관 A-29</span>`;
+const FINAL_MAIN_HTML = `<span style="background:#e4007f;color:#fff;padding:0.2px 2px;">제 목에 걸린 사탕</span>을 <span style="color:#8cc63f">빼주실 분</span>을 <span style="background:#fff100;color:#000;padding:0.2px 2px;">초대합니다.</span><br/><br/><span style="color:#e60012">오래</span> 준비한 <span style="color:#e60012">이야기</span>들을 드디어 <span style="background:#8cc63f;color:#000;padding:0.2px 2px;">DDP</span>에 <span style="background:#fff100;color:#000;padding:0.2px 2px;">꺼내놓습니다.</span> 이제 <span style="color:#8cc63f">정말</span> 끝이라고 <span style="color:#00a1e9">생각</span>했습니다. <span style="color:#8cc63f">그런데</span> 보여드리고 싶은 건 <span style="background:#66c0f4;color:#000;padding:0.2px 2px;">아직</span> 많더라고요. 그래서 <span style="background:#e4007f;color:#fff;padding:0.2px 2px;">준비했습니다.</span> 한 번쯤 꼭 <span style="background:#f37021;color:#fff;padding:0.2px 2px;">보러</span> 와주세요...`;
+const FINAL_INFO_HTML = `<span style="color:#e60012">홍익대학교</span> 디자인컨버전스학부 <span style="background:#8cc63f;color:#000;padding:0.2px 2px;">DDP</span> <span style="background:#fff100;color:#e4007f;padding:0.2px 2px;">졸업전시</span><br/><span style="background:#8cc63f;color:#000;padding:0.2px 2px;">2026. 12. 01–12. 05</span> / 12.01–12.04 10:00–20:00 / 12.05 10:00–18:00 <span style="background:#66c0f4;color:#000;padding:0.2px 2px;">DDP 아트홀 2관 A-29</span>`;
 const FINAL_MEMBERS_HTML = `<div style="font-weight:800;margin-bottom:6px;color:#231f20;background:#fff100;display:inline-block;padding:2px 7px;border-radius:4px;font-size:clamp(13.5px, 3.5cqw, 16px);">참여자</div><div style="font-size:clamp(11.5px, 3.0cqw, 14px);line-height:1.75;color:#333333;font-weight:600;margin-top:4px;">강예은 · 김서윤 · 김예준 · 김주희 · 김창래 · 김희서 · 모소연 · 박시형 · 박정연 · 박지혜 · 손예림 · 양서경 · 왕은빈 · 이채빈 · 장지혁 · 정규태 · 조유정 · 진아름 · 황예은</div>`;
 const screen=document.getElementById('phone-screen');
 const opening=document.getElementById('opening');
@@ -221,9 +233,10 @@ function play(audio,volume){if(!soundEnabled)return;try{const a=audio.cloneNode(
 function triggerHaptic(){if('vibrate' in navigator)navigator.vibrate(6)}
 function wrapFinalNodes(node){let result='';node.childNodes.forEach(child=>{if(child.nodeType===3){for(const ch of child.textContent)result+=`<span class="fch" style="display:none;">${ch==='<'?'&lt;':ch==='&'?'&amp;':ch}</span>`}else if(child.nodeType===1){const tag=child.tagName.toLowerCase();if(tag==='br')result+='<br/>';else{let attrs='';for(const attr of child.attributes)attrs+=` ${attr.name}="${attr.value}"`;result+=`<${tag}${attrs}>${wrapFinalNodes(child)}</${tag}>`}}});return result}
 const tempMain=document.createElement('div');tempMain.innerHTML=FINAL_MAIN_HTML;document.getElementById('final-main-text').innerHTML=wrapFinalNodes(tempMain);
+const tempInfo=document.createElement('div');tempInfo.innerHTML=FINAL_INFO_HTML;document.getElementById('final-info-text').innerHTML=wrapFinalNodes(tempInfo);
 const tempMemb=document.createElement('div');tempMemb.innerHTML=FINAL_MEMBERS_HTML;document.getElementById('final-members-text').innerHTML=wrapFinalNodes(tempMemb);
 const finalChars=[...document.querySelectorAll('.fch')];
-function startFinalTyping(){finalScreen.classList.add('visible');if(reducedMotion){finalChars.forEach(c=>c.style.display='inline');document.getElementById('final-cta-btn').classList.add('visible');return}if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].style.display='inline';triggerHaptic();fIdx++}else{clearInterval(timer);typeAudio.pause();typeAudio.loop=false;document.getElementById('final-cta-btn').classList.add('visible')}},38)}
+function startFinalTyping(){finalScreen.classList.add('visible');if(reducedMotion){finalChars.forEach(c=>c.style.display='inline');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'));return}if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].style.display='inline';triggerHaptic();fIdx++;finalScreen.scrollTop=Math.max(0,finalScreen.scrollHeight-finalScreen.clientHeight)}else{clearInterval(timer);typeAudio.pause();typeAudio.loop=false;document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'))}},38)}
 const candies=[...svg.querySelectorAll('#poster-candies .candy')];
 const letterIds=['MOK-2','EH-2','GUL-2','LIN-2','SA-2','TANG-2'];
 candies.forEach((ball,i)=>document.getElementById(letterIds[i]).appendChild(ball));
@@ -280,7 +293,7 @@ function run(){
   const preview=new URLSearchParams(location.search).get('preview');
   if(preview==='opening')return;
   if(preview==='converged'){opening.classList.add('converged');return}
-  if(preview==='final'){opening.style.display='none';finalScreen.classList.add('visible');finalChars.forEach(c=>c.style.display='inline');document.getElementById('final-cta-btn').classList.add('visible');return}
+  if(preview==='final'){opening.style.display='none';finalScreen.classList.add('visible');finalChars.forEach(c=>c.style.display='inline');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'));return}
   if(reducedMotion){opening.style.display='none';startFinalTyping();return}
   setTimeout(()=>opening.classList.add('converged'),700);
   setTimeout(release,2150);
