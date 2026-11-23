@@ -38,7 +38,8 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 .detail-box.pending,.final-cta-wrap.pending,.final-logos.pending{visibility:hidden;opacity:0;transform:translateY(18px)}
 .invite-lead,.invite-body{margin:0}
 .invite-lead{font-size:clamp(19px,5.2cqw,23px);line-height:1.3;font-weight:550;white-space:nowrap}
-.invite-body{margin-top:12px;font-size:clamp(13px,3.5cqw,15px);line-height:1.55;color:#393c3d}
+.invite-body{margin-top:12px;font-size:clamp(13px,3.5cqw,15px);line-height:1.55;color:#393c3d;overflow:hidden;transition:opacity .95s ease,transform .95s cubic-bezier(.42,0,.2,1),max-height 1.05s cubic-bezier(.42,0,.2,1),margin-top 1.05s ease}
+.invite-body.exiting{opacity:0;transform:translateY(-22px);margin-top:0}
 .accent-title{color:#fff}
 .accent-title .fch{background:var(--ink-pink)}
 .accent-green{color:var(--ink-teal);font-weight:550}
@@ -67,7 +68,7 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 @media(max-width:600px){body{display:block;background:#fff}.phone-frame{width:100vw;height:100svh;aspect-ratio:auto;border:0;border-radius:0;padding:0;box-shadow:none}.phone-screen{border-radius:0}}
 @media(max-height:759px){.final-text-box{gap:14px}}
 @media(max-width:600px) and (min-height:760px){.final-screen{padding:42px 24px 68px}.final-text-box{gap:16px;font-size:15px}.detail-box{padding:15px}.invite-lead{font-size:24px}.invite-body{font-size:16px;line-height:1.55;margin-top:13px}.section-label{font-size:12px;margin-bottom:14px}.participant-grid{font-size:13px;gap:10px 2px}.venue{font-size:17px}.date{font-size:15px}.info-time{font-size:12px;margin-top:7px}.final-cta-wrap{gap:7px}.final-cta-btn{min-height:42px;padding:8px 12px;font-size:14px}}
-@media(prefers-reduced-motion:reduce){#poster-letters>g,.detail-box,.final-cta-wrap,.final-logos{transition:none!important}}
+@media(prefers-reduced-motion:reduce){#poster-letters>g,.detail-box,.final-cta-wrap,.final-logos,.invite-body{transition:none!important}}
 </style>
 </head>
 <body>
@@ -261,8 +262,8 @@ document.getElementById('final-info-text').innerHTML=FINAL_INFO_HTML;
 document.getElementById('final-members-text').innerHTML=FINAL_MEMBERS_HTML;
 const finalChars=[...document.querySelectorAll('.fch')];
 function showCallouts(){document.querySelector('.final-cta-wrap').classList.remove('pending');document.querySelector('.final-logos').classList.remove('pending');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'))}
-function revealDetails(){const boxes=[document.querySelector('#final-info-text').closest('.detail-box'),document.querySelector('#final-members-text')];boxes.forEach((box,i)=>setTimeout(()=>box.classList.remove('pending'),350+i*900));setTimeout(showCallouts,2150)}
-function startFinalTyping(){finalScreen.classList.remove('awaiting');finalScreen.classList.add('visible');if(reducedMotion){document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.visibility='visible');showCallouts();return}isTyping=true;if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].style.visibility='visible';if(fIdx%3===0)triggerHaptic();fIdx++}else{clearInterval(timer);isTyping=false;typeAudio.pause();typeAudio.loop=false;revealDetails()}},38)}
+function revealDetails(){const body=document.querySelector('.invite-body');body.style.maxHeight=`${body.scrollHeight}px`;body.getBoundingClientRect();requestAnimationFrame(()=>{body.classList.add('exiting');body.style.maxHeight='0px'});const boxes=[document.querySelector('#final-info-text').closest('.detail-box'),document.querySelector('#final-members-text')];boxes.forEach((box,i)=>setTimeout(()=>box.classList.remove('pending'),350+i*900));setTimeout(showCallouts,2150)}
+function startFinalTyping(){finalScreen.classList.remove('awaiting');finalScreen.classList.add('visible');if(reducedMotion){document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.visibility='visible');showCallouts();return}isTyping=true;if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].style.visibility='visible';if(fIdx%3===0)triggerHaptic();fIdx++}else{clearInterval(timer);isTyping=false;typeAudio.pause();typeAudio.loop=false;setTimeout(revealDetails,1000)}},38)}
 const candies=[...svg.querySelectorAll('#poster-candies .candy')];
 const letterIds=['MOK-2','EH-2','GUL-2','LIN-2','SA-2','TANG-2'];
 const letterGroups=letterIds.map(id=>document.getElementById(id));
