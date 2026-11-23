@@ -1,0 +1,15 @@
+/* 초대장 컬러 팔레트: 아래 #RRGGBB 값만 수정하세요.
+   --c-* 여섯 색은 오프닝 구슬, 떨어지는 구슬, 본문 하이라이트에 함께 쓰입니다.
+   --ink-* 세 색은 제목과 본문의 컬러 글씨에 쓰입니다. */
+:root {
+  --c-mint: #bcefe5;
+  --c-pink: #f48cbd;
+  --c-yellow: #ffe77a;
+  --c-lime: #aae16b;
+  --c-coral: #ff6979;
+  --c-blue: #70cafa;
+
+  --ink-pink: #e44993;
+  --ink-teal: #008e85;
+  --ink-coral: #d63b51;
+}
