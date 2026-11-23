@@ -35,7 +35,7 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 #final-main-text{padding:0 0 3px}
 .detail-box.pending{visibility:hidden}
 .invite-lead,.invite-body{margin:0}
-.invite-lead{font-size:clamp(16px,4.4cqw,19px);line-height:1.45;font-weight:700}
+.invite-lead{font-size:clamp(19px,5.2cqw,23px);line-height:1.28;font-weight:750;white-space:nowrap}
 .invite-body{margin-top:12px;font-size:clamp(13px,3.5cqw,15px);line-height:1.55;color:#393c3d}
 .accent-title{color:#171717}
 .accent-title .fch{background:var(--c-pink)}
@@ -52,7 +52,8 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 .final-members-text{text-align:left;min-width:0}
 .participant-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px 2px;font-size:clamp(9px,2.65cqw,11px);line-height:1.45;font-weight:520;color:#333;white-space:nowrap}
 .final-logos{display:flex;align-items:center;justify-content:center;min-height:22px}
-.final-logos img{display:block;width:min(70%,190px);height:auto}
+.final-logos img{display:block;width:min(60%,150px);height:auto}
+.final-logos.pending{visibility:hidden}
 #final-info-text{display:grid;gap:2px;line-height:1.3}
 .venue{font-size:clamp(13px,3.8cqw,16px);font-weight:700}
 .date{font-size:clamp(12px,3.5cqw,15px);font-weight:600}
@@ -63,7 +64,8 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 .final-cta-btn.visible{visibility:visible;pointer-events:auto}
 .fch{visibility:hidden}
 @media(max-width:600px){body{display:block;background:#fff}.phone-frame{width:100vw;height:100svh;aspect-ratio:auto;border:0;border-radius:0;padding:0;box-shadow:none}.phone-screen{border-radius:0}}
-@media(max-width:600px) and (min-height:760px){.final-screen{padding:42px 24px 68px}.final-text-box{gap:24px;font-size:15px}.detail-box{padding:18px}.invite-lead{font-size:20px}.invite-body{font-size:16px;line-height:1.55;margin-top:17px}.section-label{font-size:12px;margin-bottom:14px}.participant-grid{font-size:11px;gap:10px 3px}.venue{font-size:17px}.date{font-size:15px}.info-time{font-size:12px;margin-top:7px}.final-cta-wrap{gap:7px}.final-cta-btn{min-height:44px;padding:9px 12px;font-size:14px}}
+@media(max-height:759px){.final-text-box{gap:14px}}
+@media(max-width:600px) and (min-height:760px){.final-screen{padding:42px 24px 68px}.final-text-box{gap:16px;font-size:15px}.detail-box{padding:15px}.invite-lead{font-size:24px}.invite-body{font-size:16px;line-height:1.55;margin-top:13px}.section-label{font-size:12px;margin-bottom:14px}.participant-grid{font-size:11px;gap:10px 3px}.venue{font-size:17px}.date{font-size:15px}.info-time{font-size:12px;margin-top:7px}.final-cta-wrap{gap:7px}.final-cta-btn{min-height:42px;padding:8px 12px;font-size:14px}}
 @media(prefers-reduced-motion:reduce){#poster-letters>g{transition:none!important}}
 </style>
 </head>
@@ -231,7 +233,7 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 <a class="final-cta-btn" href="https://ddp.or.kr/index.html?menuno=230&amp;siteno=2&amp;bbsno=620&amp;boardno=15&amp;bbstopno=620&amp;act=view" target="_blank" rel="noopener noreferrer">DDP 전시 <span aria-hidden="true">↗</span></a>
 <a class="final-cta-btn" href="https://map.naver.com/p/search/%EB%8F%99%EB%8C%80%EB%AC%B8%EB%94%94%EC%9E%90%EC%9D%B8%ED%94%8C%EB%9D%BC%EC%9E%90" target="_blank" rel="noopener noreferrer">오시는 길 <span aria-hidden="true">↗</span></a>
 <a class="final-cta-btn" href="https://www.instagram.com/stuck_in_a_throat/" target="_blank" rel="noopener noreferrer">인스타그램 <span aria-hidden="true">↗</span></a>
-</div><div class="final-logos"><img src="assets/partner-logos.svg" alt="DDP · 홍익대학교"></div></div>
+</div><div class="final-logos pending"><img src="assets/partner-logos.svg" alt="DDP · 홍익대학교"></div></div>
 </section>
 </div>
 </main>
@@ -240,7 +242,7 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 <audio id="pop-audio" src="assets/pop.mp3" preload="auto"></audio>
 <audio id="whoosh-audio" src="assets/whoosh.mp3" preload="auto"></audio>
 <script>
-const FINAL_MAIN_HTML = `<p class="invite-lead"><span class="accent-title">목에 걸린 사탕</span>을 <span class="accent-green">함께 꺼내주실 여러분</span>을 <span class="accent-yellow">초대합니다.</span></p><p class="invite-body"><span class="accent-red">오랜 시간</span> 준비한 이야기들을 <span class="accent-lime">DDP</span>에서 <span class="accent-yellow">선보입니다.</span> 끝이라고 생각한 뒤에도 <span class="accent-blue">전하고 싶은 이야기</span>가 남아 있었습니다. 귀한 걸음으로 <span class="accent-purple">함께해 주시면</span> <span class="accent-orange">감사하겠습니다.</span></p>`;
+const FINAL_MAIN_HTML = `<p class="invite-lead"><span class="accent-title">목에 걸린 사탕</span>을<br><span class="accent-green">함께 꺼내주실 여러분</span>을<br><span class="accent-lime">DDP</span>로 <span class="accent-yellow">초대합니다.</span></p><p class="invite-body"><span class="accent-red">오랜 시간</span> 준비한 이야기들을 <span class="accent-lime">DDP</span>에서 <span class="accent-yellow">선보입니다.</span> 끝이라고 생각한 뒤에도 <span class="accent-blue">전하고 싶은 이야기</span>가 남아 있었습니다. 귀한 걸음으로 <span class="accent-purple">함께해 주시면</span> <span class="accent-orange">감사하겠습니다.</span></p>`;
 const FINAL_INFO_HTML = `<div class="venue">DDP 아트홀 2관 · A-29</div><div class="date">2026. 12. 01 – 12. 05</div><div class="info-time">화–금 10:00–20:00 / 토 10:00–18:00<br/>무료 · 관람 종료 30분 전 입장 마감</div>`;
 const FINAL_MEMBERS_HTML = `<div class="section-label">참여 디자이너</div><div class="participant-grid"><span>강예은</span><span>강지혜</span><span>김서윤</span><span>김유빈</span><span>김주희</span><span>김창래</span><span>김해준</span><span>김희서</span><span>모소연</span><span>박지호</span><span>방태림</span><span>서유정</span><span>손예림</span><span>양서경</span><span>이채빈</span><span>전승아</span><span>정규태</span><span>진아름</span><span>최성근</span><span>황예은</span></div>`;
 const screen=document.getElementById('phone-screen');
@@ -262,7 +264,8 @@ const tempMain=document.createElement('div');tempMain.innerHTML=FINAL_MAIN_HTML;
 const tempInfo=document.createElement('div');tempInfo.innerHTML=FINAL_INFO_HTML;document.getElementById('final-info-text').innerHTML=wrapFinalNodes(tempInfo);
 const tempMemb=document.createElement('div');tempMemb.innerHTML=FINAL_MEMBERS_HTML;document.getElementById('final-members-text').innerHTML=wrapFinalNodes(tempMemb);
 const finalChars=[...document.querySelectorAll('.fch')];
-function startFinalTyping(){finalScreen.classList.remove('awaiting');finalScreen.classList.add('visible');if(reducedMotion){document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.visibility='visible');document.querySelector('.final-cta-wrap').classList.remove('pending');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'));return}if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].closest('.detail-box')?.classList.remove('pending');finalChars[fIdx].style.visibility='visible';triggerHaptic();fIdx++}else{clearInterval(timer);typeAudio.pause();typeAudio.loop=false;document.querySelector('.final-cta-wrap').classList.remove('pending');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'))}},32)}
+function showCallouts(){document.querySelector('.final-cta-wrap').classList.remove('pending');document.querySelector('.final-logos').classList.remove('pending');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'))}
+function startFinalTyping(){finalScreen.classList.remove('awaiting');finalScreen.classList.add('visible');if(reducedMotion){document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.visibility='visible');showCallouts();return}if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].closest('.detail-box')?.classList.remove('pending');finalChars[fIdx].style.visibility='visible';triggerHaptic();fIdx++}else{clearInterval(timer);typeAudio.pause();typeAudio.loop=false;showCallouts()}},32)}
 const candies=[...svg.querySelectorAll('#poster-candies .candy')];
 const letterIds=['MOK-2','EH-2','GUL-2','LIN-2','SA-2','TANG-2'];
 const letterGroups=letterIds.map(id=>document.getElementById(id));
@@ -292,18 +295,17 @@ function screenPoint(group,x,y){
   const frame=screen.getBoundingClientRect();
   return {x:point.x-frame.left,y:point.y-frame.top};
 }
-function animateBallPath(ball,points,delay,onExit){
+function animateBallPath(ball,points,delay){
   return new Promise(resolve=>{
   const start=points[0];
   const lengths=[0];
   for(let i=1;i<points.length;i++)lengths.push(lengths[i-1]+Math.hypot(points[i].x-points[i-1].x,points[i].y-points[i-1].y));
   const total=lengths.at(-1)||1;
   const animation=ball.animate(points.map((p,i)=>({transform:`translate(calc(-50% + ${p.x-start.x}px),calc(-50% + ${p.y-start.y}px))`,offset:Math.sqrt(lengths[i]/total)})),{duration:Math.max(560,Math.min(1250,560+total*2.8)),delay,easing:'linear',fill:'forwards'});
-  animation.onfinish=()=>{const end=points.at(-1);ball.style.left=`${end.x}px`;ball.style.top=`${end.y}px`;ball.style.transform='translate(-50%,-50%)';animation.cancel();onExit(ball);resolve()};
+  animation.onfinish=()=>{const end=points.at(-1);ball.style.left=`${end.x}px`;ball.style.top=`${end.y}px`;ball.style.transform='translate(-50%,-50%)';animation.cancel();resolve()};
   });
 }
-function release(onExit){
-  play(whooshAudio,.5);
+function release(){
   const frame=screen.getBoundingClientRect();
   const motions=candies.map((source,i)=>{
     const group=letterGroups[i];
@@ -320,7 +322,7 @@ function release(onExit){
     screen.appendChild(ball);
     source.style.visibility='hidden';
     fallingBalls.push(ball);
-    return animateBallPath(ball,path,i*180,()=>onExit(ball,i));
+    return animateBallPath(ball,path,i*180);
   });
   return Promise.all(motions);
 }
@@ -334,17 +336,18 @@ function addRainBalls(){
     const ball=document.createElement('i');
     const size=diameter;
     ball.className='falling-ball';
-    ball.style.cssText=`left:${cx+lanes[i]*spread}px;top:${-size-i*34}px;width:${size}px;height:${size}px;background:${rainColors[i%rainColors.length]};transform:translate(-50%,-50%)`;
+    ball.style.cssText=`left:${cx+lanes[i]*spread}px;top:${-size-i*17}px;width:${size}px;height:${size}px;background:${rainColors[i%rainColors.length]};transform:translate(-50%,-50%)`;
     screen.appendChild(ball);fallingBalls.push(ball);added.push(ball);
   }
   return added;
 }
 function fallAndPile(){
+  play(whooshAudio,.5);
   const height=screen.clientHeight;
-  const makeBody=(ball,i)=>({ball,x:parseFloat(ball.style.left),y:parseFloat(ball.style.top),r:ball.offsetWidth/2,vx:i<6?[-2.2,-1.4,1.8,2.3,-2.5,2.6][i]:(((i*7)%5)-2)*.8,vy:0,landed:false,isRain:i>=6});
-  const bodies=[];
-  let releasedCount=0;
+  const makeBody=(ball,i)=>({ball,x:parseFloat(ball.style.left),y:parseFloat(ball.style.top),r:ball.offsetWidth/2,vx:i<6?[-2.2,-1.4,1.8,2.3,-2.5,2.6][i]:(((i*7)%5)-2)*.8,vy:i<6?2.8:0,landed:false,isRain:i>=6});
+  const bodies=fallingBalls.map(makeBody);
   let last=performance.now(),frames=0,informationStarted=false,rainLandingCount=0,transitionQueued=false;
+  setTimeout(()=>{const startIndex=bodies.length;addRainBalls().forEach((ball,j)=>bodies.push(makeBody(ball,startIndex+j)))},260);
   function step(now){
     const dt=Math.min((now-last)/16.67,2);last=now;frames++;
     for(const body of bodies){
@@ -360,7 +363,7 @@ function fallAndPile(){
         body.y=floor;body.vy=Math.abs(body.vy)<.6?0:-body.vy*.43;body.vx*=.97;
         if(!body.landed){
           body.landed=true;play(popAudio,.32);
-          if(body.isRain){rainLandingCount++;if(!informationStarted&&rainLandingCount>=2){informationStarted=true;startFinalTyping()}}
+          if(body.isRain){rainLandingCount++;if(!informationStarted&&rainLandingCount>=2&&finalScreen.classList.contains('visible')){informationStarted=true;startFinalTyping()}}
         }
       }
     }
@@ -381,18 +384,16 @@ function fallAndPile(){
       }
     }
     for(const body of bodies){body.ball.style.left=`${body.x}px`;body.ball.style.top=`${body.y}px`}
-    if(!transitionQueued&&releasedCount===6&&bodies.slice(0,6).every(body=>body.landed)){
+    if(!transitionQueued&&bodies.slice(0,6).every(body=>body.landed)){
       transitionQueued=true;
       setTimeout(()=>{
         finalScreen.classList.add('visible','awaiting');autoScrollToInvitation();
-        const startIndex=bodies.length;
-        addRainBalls().forEach((ball,j)=>bodies.push(makeBody(ball,startIndex+j)));
+        if(!informationStarted&&rainLandingCount>=2){informationStarted=true;startFinalTyping()}
       },650);
     }
     if(frames<900)requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
-  return (ball,i)=>{bodies.push(makeBody(ball,i));releasedCount++};
 }
 function autoScrollToInvitation(){
   const start=track.scrollTop,target=opening.offsetHeight;
@@ -409,10 +410,10 @@ function run(){
   const preview=new URLSearchParams(location.search).get('preview');
   if(preview==='opening')return;
   if(preview==='converged'){letterGroups.forEach(group=>group.classList.add('aligned'));return}
-  if(preview==='final'){finalScreen.classList.add('visible');track.scrollTop=opening.offsetHeight;document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.visibility='visible');document.querySelector('.final-cta-wrap').classList.remove('pending');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'));return}
+  if(preview==='final'){finalScreen.classList.add('visible');track.scrollTop=opening.offsetHeight;document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.visibility='visible');showCallouts();return}
   if(reducedMotion){finalScreen.classList.add('visible');track.scrollTop=opening.offsetHeight;startFinalTyping();return}
   letterGroups.forEach((group,i)=>setTimeout(()=>group.classList.add('aligned'),600+i*240));
-  setTimeout(()=>release(fallAndPile()),3100);
+  setTimeout(async()=>{await release();fallAndPile()},3100);
 }
 run();
 </script>
