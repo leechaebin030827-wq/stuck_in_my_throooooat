@@ -454,11 +454,9 @@ function run(){
   letterGroups.forEach((group,i)=>setTimeout(()=>group.classList.add('aligned'),650+i*430));
   setTimeout(async()=>{
     await release();
-    setTimeout(()=>{
-      finalScreen.classList.add('visible','awaiting');
-      autoScrollToInvitation();
-      setTimeout(fallAndPile,1900);
-    },700);
+    finalScreen.classList.add('visible','awaiting');
+    autoScrollToInvitation();
+    setTimeout(fallAndPile,1900);
   },4400);
 }
 run();
