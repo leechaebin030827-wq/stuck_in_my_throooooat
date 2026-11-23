@@ -16,17 +16,17 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 .phone-frame{width:min(390px,calc((100svh - 48px)*.462085),calc(100vw - 48px));aspect-ratio:390/844;border:1.5px solid #505657;border-radius:27px;padding:7px;background:#fff;box-shadow:0 18px 60px #23303320;overflow:hidden}
 .phone-screen{position:relative;width:100%;height:100%;overflow:hidden;border-radius:19px;background:#fff;isolation:isolate;container-type:inline-size}
 .opening{position:absolute;inset:0;overflow:hidden;background:#fff;z-index:1;transition:opacity .55s ease}
-.poster-grid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;pointer-events:none}
+.poster-grid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;pointer-events:none;transform:translate(-18px,48px)}
 .topline{position:absolute;z-index:2;top:5.1%;left:7%;right:7%;display:flex;justify-content:space-between;gap:12px;font-size:clamp(11px,1.7svh,14px);line-height:1.33;letter-spacing:-.025em;font-weight:520}
 .topline p{margin:0}.topline p:last-child{text-align:right}
-#main-svg{position:absolute;width:88%;height:74%;left:6%;top:16%;overflow:visible;z-index:2}
-#main-svg>g{transform-box:fill-box;transform-origin:center;transition:transform 1.1s cubic-bezier(.2,.74,.2,1)}
-.opening.open #main-svg>g:nth-of-type(1){transform:translate(43px,28px)}
-.opening.open #main-svg>g:nth-of-type(2){transform:translate(-52px,32px)}
-.opening.open #main-svg>g:nth-of-type(3){transform:translate(45px,-35px)}
-.opening.open #main-svg>g:nth-of-type(4){transform:translate(-51px,-20px)}
-.opening.open #main-svg>g:nth-of-type(5){transform:translate(-49px,-30px)}
-.opening.open #main-svg>g:nth-of-type(6){transform:translate(-57px,18px)}
+#main-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:2;transform:translate(-18px,48px)}
+#poster-letters>g{transform-box:fill-box;transform-origin:center;transition:transform 1.1s cubic-bezier(.2,.74,.2,1)}
+.opening.open #poster-letters>g:nth-of-type(1){transform:translate(130px,85px)}
+.opening.open #poster-letters>g:nth-of-type(2){transform:translate(-130px,-30px)}
+.opening.open #poster-letters>g:nth-of-type(3){transform:translate(-135px,-35px)}
+.opening.open #poster-letters>g:nth-of-type(4){transform:translate(120px,-40px)}
+.opening.open #poster-letters>g:nth-of-type(5){transform:translate(125px,30px)}
+.opening.open #poster-letters>g:nth-of-type(6){transform:translate(-130px,30px)}
 .candy{transform-box:fill-box;transform-origin:center;will-change:transform,opacity}
 .confetti{position:absolute;z-index:6;pointer-events:none;will-change:transform,opacity}
 .final-screen{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;overflow-y:auto;padding:36px 32px;background:#f4f4f6;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s ease}
@@ -38,7 +38,7 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 .final-cta-btn.visible{opacity:1;pointer-events:auto}
 .fch{display:none}
 @media(max-width:600px){body{display:block;background:#fff}.phone-frame{width:100vw;height:100svh;aspect-ratio:auto;border:0;border-radius:0;padding:0;box-shadow:none}.phone-screen{border-radius:0}}
-@media(prefers-reduced-motion:reduce){#main-svg>g,.opening,.final-screen{transition:none!important}}
+@media(prefers-reduced-motion:reduce){#poster-letters>g,.opening,.final-screen{transition:none!important}}
 </style>
 </head>
 <body>
@@ -47,127 +47,153 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 <section class="opening" id="opening" aria-label="목에 걸린 사탕 오프닝">
 <img class="poster-grid" src="assets/poster-grid.svg" alt="">
 <header class="topline"><p>2026 DDP<br>Design Graduation<br>Exhibition</p><p>HIDC Hongik Univ.<br>Design Convergence</p></header>
-<svg id="main-svg"
-     viewBox="308 272 264 347"
-     xmlns="http://www.w3.org/2000/svg">
-  <defs>
+<svg xmlns="http://www.w3.org/2000/svg" id="main-svg" viewBox="250 0 800 1720.82" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><defs>
     <style>
-      .s { fill: none; stroke: #231f20; stroke-miterlimit: 10; stroke-width: 1.5px; }
-      .d { fill: #231f20; }
+      .cls-1 {
+        stroke-dasharray: 5.96 5.96;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-7, .cls-8, .cls-9 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-7, .cls-9 {
+        stroke: #ecedee;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-7, .cls-8, .cls-9 {
+        stroke-width: 3.25px;
+      }
+
+      .cls-11 {
+        fill: #eff0f1;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 4.33;
+      }
+
+      .cls-12, .cls-13 {
+        font-size: 18.89px;
+        letter-spacing: .03em;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 5.96 5.96;
+      }
+
+      .cls-6 {
+        font-size: 9.34px;
+        letter-spacing: .05em;
+        stroke: #0f1211;
+      }
+
+      .cls-6, .cls-14, .cls-15, .cls-13 {
+        font-family: DSEndEndEnd-Regular, 'DSEndEndEnd Regular-KSCpc-EUC-H';
+      }
+
+      .cls-6, .cls-14, .cls-15, .cls-13, .cls-16 {
+        fill: #202020;
+      }
+
+      .cls-6, .cls-10 {
+        stroke-width: .25px;
+      }
+
+      .cls-7 {
+        stroke-dasharray: 5.98 5.98;
+      }
+
+      .cls-17, .cls-10 {
+        fill: #0f1211;
+      }
+
+      .cls-8 {
+        stroke: #eff0f1;
+      }
+
+      .cls-14 {
+        font-size: 11.67px;
+        letter-spacing: .03em;
+      }
+
+      .cls-18 {
+        opacity: .8;
+      }
+
+      .cls-19 {
+        opacity: .35;
+      }
+
+      .cls-9 {
+        stroke-dasharray: 5.99 5.99;
+      }
+
+      .cls-10 {
+        stroke: #231815;
+      }
+
+      .cls-20 {
+        font-size: 14.69px;
+        letter-spacing: .02em;
+      }
+
+      .cls-21 {
+        clip-path: url(#clippath);
+      }
     </style>
+    <clipPath id="clippath">
+      <path class="cls-5" d="M971.77,621.26h-179.72v-238.74h179.72v-238.74H432.59v238.74h-179.72v238.74H73.14v238.74h359.45v-238.74h179.72v477.49H252.87v238.74H73.14v238.74h898.62v-238.74s0-238.74,0-238.74h179.73v-477.49h-179.73ZM792.04,1337.49h-179.72v-238.74h179.72v238.74Z" />
+    </clipPath>
   </defs>
-
-  <!-- ── TANG (탕) ─────────────────────────────────── -->
-  <g>
-    <!-- 탕_사탕 (green) -->
-    <rect fill="#84c779" x="513.82" y="579.02" width="22.68" height="22.68" rx="11.34"/>
-    <!-- 탕_ㅇ -->
-    <line class="s" x1="510.99" y1="587.52" x2="510.99" y2="593.19"/>
-    <line class="s" x1="539.33" y1="587.52" x2="539.33" y2="593.19"/>
-    <line class="s" x1="510.99" y1="590.36" x2="539.33" y2="590.36"/>
-    <path class="s" d="M496.81,570.51h56.69c7.82,0,14.17,6.35,14.17,14.17v17.01c0,7.82-6.35,14.17-14.17,14.17h-70.87v-31.18c0-7.82,6.35-14.17,14.17-14.17Z"/>
-    <!-- 탕_ㅏ -->
-    <rect class="s" x="539.33" y="502.48" width="28.35" height="68.03"/>
-    <line class="s" x1="567.68" y1="525.16" x2="562.01" y2="525.16"/>
-    <line class="s" x1="567.68" y1="547.84" x2="562.01" y2="547.84"/>
-    <!-- 탕_ㅌ -->
-    <line class="s" x1="510.99" y1="545"    x2="510.99" y2="550.67"/>
-    <line class="s" x1="510.99" y1="522.32" x2="510.99" y2="527.99"/>
-    <line class="s" x1="510.99" y1="547.84" x2="539.33" y2="547.84"/>
-    <line class="s" x1="510.99" y1="525.16" x2="539.33" y2="525.16"/>
-    <rect class="s" x="482.64" y="502.48" width="56.69" height="68.03"/>
+  <g id="poster-letters">
+    <g id="TANG-2" data-name="TANG">
+      <g>
+        <polygon class="cls-16" points="730.37 1520.92 673.79 1520.92 673.79 1516.53 670.62 1516.53 670.62 1528.46 673.79 1528.46 673.79 1524.07 730.37 1524.07 730.37 1528.46 733.53 1528.46 733.53 1516.53 730.37 1516.53 730.37 1520.92" />
+        <path class="cls-16" d="M761.95,1479.19h-119.66c-17.37,0-31.5,14.08-31.5,31.38v67.15s151.15,0,151.15,0c17.37,0,31.5-14.08,31.5-31.38v-35.77c0-17.3-14.13-31.38-31.5-31.38ZM790.28,1546.34c0,15.56-12.71,28.23-28.33,28.23h-147.99s0-63.99,0-63.99c0-15.56,12.71-28.23,28.33-28.23h119.66c15.62,0,28.33,12.66,28.33,28.23v35.77Z" />
+      </g>
+      <path class="cls-16" d="M730.45,1336.13v146.21s63,0,63,0v-146.21s-63,0-63,0ZM733.62,1479.19v-139.9s56.66,0,56.66,0v44.53s-10.38,0-10.38,0v3.15s10.38,0,10.38,0v44.53s-10.38,0-10.38,0v3.15s10.38,0,10.38,0v44.53s-56.66,0-56.66,0Z" />
+      <path class="cls-16" d="M610.79,1336.14v146.21s122.82,0,122.82,0v-146.21s-122.82,0-122.82,0ZM613.96,1479.19v-139.9s116.49,0,116.49,0v44.53s-56.66,0-56.66,0v-4.38s-3.17,0-3.17,0v11.92s3.17,0,3.17,0v-4.38s56.66,0,56.66,0v44.53s-56.66,0-56.66,0v-4.38s-3.17,0-3.17,0v11.92s3.17,0,3.17,0v-4.38s56.66,0,56.66,0v44.53s-116.49,0-116.49,0Z" />
+    </g>
+    <g id="SA-2" data-name="SA">
+      <path class="cls-16" d="M550.91,1097.31v241.58s63,0,63,0v-241.58s-63,0-63,0ZM554.08,1335.74v-235.27s56.66,0,56.66,0v92.22s-10.38,0-10.38,0v3.15s10.38,0,10.38,0v44.53s-10.38,0-10.38,0v3.15s10.38,0,10.38,0v92.22s-56.66,0-56.66,0Z" />
+      <path class="cls-16" d="M431.25,1097.31v241.58s122.82,0,122.82,0v-241.58s-122.82,0-122.82,0ZM550.91,1335.74h-56.66s0-187.59,0-187.59h4.4s0-3.15,0-3.15h-11.96s0,3.15,0,3.15h4.4s0,187.59,0,187.59h-56.66s0-235.27,0-235.27h116.49s0,235.27,0,235.27Z" />
+    </g>
+    <g id="MOK-2" data-name="MOK">
+      <path class="cls-16" d="M430.79,285.21v56.8s119.82,0,119.82,0v41.72s63.08,0,63.08,0v-98.52s-182.9,0-182.9,0ZM610.52,380.57h-56.73s0-39.5,0-39.5l8.01-7.97-2.24-2.23-8.02,7.97h-117.57s0-50.49,0-50.49h176.56s0,92.21,0,92.21Z" />
+      <path class="cls-16" d="M430.79,237.51v50.84s182.92,0,182.92,0v-50.84s-182.92,0-182.92,0ZM610.54,285.2h-176.58s0-44.53,0-44.53h56.74s0,10.34,0,10.34h3.17s0-10.34,0-10.34h56.75s0,10.34,0,10.34h3.17s0-10.34,0-10.34h56.75s0,44.53,0,44.53Z" />
+      <g>
+        <polygon class="cls-16" points="493.88 198.94 550.62 198.94 550.62 203.32 553.79 203.32 553.79 191.4 550.62 191.4 550.62 195.79 493.88 195.79 493.88 191.4 490.71 191.4 490.71 203.32 493.88 203.32 493.88 198.94" />
+        <path class="cls-16" d="M430.79,142.14v98.53s182.92,0,182.92,0v-98.53s-182.92,0-182.92,0ZM610.54,237.51h-176.58s0-92.22,0-92.22h176.58s0,92.22,0,92.22Z" />
+        <rect class="cls-16" x="504.27" y="176.5" width="3" height="2.98" />
+        <rect class="cls-16" x="537.23" y="176.5" width="3" height="2.98" />
+      </g>
+    </g>
+    <g id="EH-2" data-name="EH">
+      <path class="cls-16" d="M733.62,381.22h-3.17s-59.9,0-59.9,0v241.72s59.9,0,59.9,0h3.17s59.9,0,59.9,0v-241.72s-59.9,0-59.9,0ZM730.45,619.79h-56.73s0-92.27,0-92.27h10.39s0-3.16,0-3.16h-10.39s0-44.56,0-44.56h10.39s0-3.16,0-3.16h-10.39s0-92.27,0-92.27h56.73s0,235.41,0,235.41ZM790.35,619.79h-56.73s0-235.41,0-235.41h56.73s0,235.41,0,235.41Z" />
+      <g id="_에__-2" data-name="에_ㅇ">
+        <rect class="cls-16" x="640.59" y="472.26" width="3.17" height="59.64" />
+        <path class="cls-16" d="M642.18,622.94h-31.54s0-210.32,0-210.32c0-17.31,14.15-31.4,31.54-31.4h31.54s0,210.32,0,210.32c0,17.31-14.15,31.4-31.54,31.4ZM613.81,619.79h28.37c15.64,0,28.37-12.67,28.37-28.24v-207.17s-28.37,0-28.37,0c-15.64,0-28.37,12.67-28.37,28.24v207.17Z" />
+      </g>
+    </g>
+    <g id="LIN-2" data-name="LIN">
+      <path class="cls-16" d="M841.29,1043.81v-41.72s-122.81,0-122.81,0v98.52s182.65,0,182.65,0v-56.8s-59.83,0-59.83,0ZM897.96,1097.46h-176.32s0-92.21,0-92.21h116.48s0,39.5,0,39.5l-7.99,7.97,2.24,2.23,8.01-7.98h57.58s0,50.49,0,50.49Z" />
+      <g id="_린__-2" data-name="린_ㅣ">
+        <path class="cls-16" d="M901.12,1005.24h-62.99s0-146.21,0-146.21h62.99s0,146.21,0,146.21ZM841.29,1002.09h56.66s0-139.9,0-139.9h-56.66s0,139.9,0,139.9Z" />
+      </g>
+      <path class="cls-16" d="M718.48,859.03v146.21s122.82,0,122.82,0v-146.21s-122.82,0-122.82,0ZM778.3,961.94h3.17s0-4.38,0-4.38h56.66s0,44.53,0,44.53h-116.49s0-92.22,0-92.22h56.66s0,4.38,0,4.38h3.17s0-11.92,0-11.92h-3.17s0,4.38,0,4.38h-56.66s0-44.53,0-44.53h116.49s0,92.22,0,92.22h-56.66s0-4.38,0-4.38h-3.17s0,11.92,0,11.92" />
+    </g>
+    <g id="GUL-2" data-name="GUL">
+      <path class="cls-16" d="M1020.93,804.54v-89.4s-122.82,0-122.82,0v146.22s182.65,0,182.65,0v-56.81s-59.83,0-59.83,0ZM1077.6,858.2h-176.32s0-92.22,0-92.22h56.66s0,4.38,0,4.38h3.17s0-11.92,0-11.92h-3.17s0,4.38,0,4.38h-56.66s0-44.53,0-44.53h116.48s0,86.26,0,86.26h-56.66s0-4.38,0-4.38h-3.17s0,11.92,0,11.92h3.17s0-4.38,0-4.38h58.25,0s58.25,0,58.25,0v50.5Z" />
+      <path class="cls-16" d="M1017.76,619.77v187.93s63,0,63,0v-187.93s-63,0-63,0ZM1077.6,804.54h-56.67s0-86.25,0-86.25h10.39s0-3.15,0-3.15h-10.39s0-44.53,0-44.53h10.39s0-3.15,0-3.15h-10.39s0-44.52,0-44.52h56.67s0,181.62,0,181.62Z" />
+      <path class="cls-16" d="M898.12,619.77v50.83s59.83,0,59.83,0v47.69s62.98,0,62.98,0v-98.52s-122.82,0-122.82,0ZM1017.77,715.14h-56.65s0-45.47,0-45.47l7.99-7.96-2.24-2.23-7.99,7.96h-57.59s0-44.52,0-44.52h116.48s0,92.21,0,92.21Z" />
+    </g>
   </g>
-
-  <!-- ── SA (사) ──────────────────────────────────── -->
-  <g>
-    <!-- 사_사탕 (orange) -->
-    <rect fill="#f04f2c" x="414.61" y="539.33" width="22.68" height="22.68" rx="11.34"/>
-    <!-- 사_ㅏ -->
-    <line class="s" x1="482.64" y1="547.84" x2="476.97" y2="547.84"/>
-    <line class="s" x1="482.64" y1="570.51" x2="476.97" y2="570.51"/>
-    <rect class="s" x="454.29" y="502.48" width="28.35" height="113.39"/>
-    <!-- 사_ㅅ -->
-    <line class="s" x1="425.95" y1="525.16" x2="425.95" y2="615.87"/>
-    <line class="s" x1="428.78" y1="525.16" x2="423.11" y2="525.16"/>
-    <rect class="s" x="397.6"  y="502.48" width="56.69" height="113.39"/>
-  </g>
-
-  <!-- ── LIN (린) ──────────────────────────────────── -->
-  <g>
-    <!-- 린_사탕 (pink) -->
-    <rect fill="#db58a0" x="528" y="465.63" width="22.68" height="22.68" rx="11.34"/>
-    <!-- 린_ㄴ -->
-    <line class="s" x1="539.33" y1="476.97" x2="535.32" y2="480.98"/>
-    <polygon class="s" points="567.68 476.97 567.68 502.48 482.64 502.48 482.64 457.13 539.33 457.13 539.33 476.97 567.68 476.97"/>
-    <!-- 린_ㅣ -->
-    <rect class="s" x="539.33" y="389.1" width="28.35" height="68.03"/>
-    <!-- 린_ㄹ -->
-    <line class="s" x1="510.99" y1="431.62" x2="510.99" y2="437.29"/>
-    <line class="s" x1="510.99" y1="408.94" x2="510.99" y2="414.61"/>
-    <line class="s" x1="510.99" y1="434.45" x2="539.33" y2="434.45"/>
-    <line class="s" x1="482.64" y1="411.77" x2="510.99" y2="411.77"/>
-    <rect class="s" x="482.64" y="389.1" width="56.69" height="68.03"/>
-  </g>
-
-  <!-- ── GUL (걸) ──────────────────────────────────── -->
-  <g>
-    <!-- 걸_사탕 (yellow) -->
-    <rect fill="#faed28" x="414.61" y="400.44" width="22.68" height="22.68" rx="11.34"/>
-    <!-- 걸_ㄹ -->
-    <line class="s" x1="425.95" y1="474.14" x2="425.95" y2="479.81"/>
-    <line class="s" x1="425.95" y1="454.29" x2="425.95" y2="459.96"/>
-    <line class="s" x1="397.6"  y1="457.13" x2="425.95" y2="457.13"/>
-    <line class="s" x1="425.95" y1="476.97" x2="454.29" y2="476.97"/>
-    <polygon class="s" points="482.64 476.97 482.64 502.48 397.6 502.48 397.6 434.45 454.29 434.45 454.29 476.97 482.64 476.97"/>
-    <!-- 걸_ㅓ -->
-    <line class="s" x1="459.96" y1="411.77" x2="454.29" y2="411.77"/>
-    <line class="s" x1="459.96" y1="434.45" x2="454.29" y2="434.45"/>
-    <rect class="s" x="454.29" y="389.1" width="28.35" height="87.86"/>
-    <!-- 걸_ㄱ -->
-    <line class="s" x1="429.96" y1="407.76" x2="425.95" y2="411.77"/>
-    <polygon class="s" points="454.29 389.1 454.29 434.45 425.95 434.45 425.95 411.77 397.6 411.77 397.6 389.1 454.29 389.1"/>
-  </g>
-
-  <!-- ── EH (예) ──────────────────────────────────── -->
-  <g>
-    <!-- 예_사탕 (blue) -->
-    <rect fill="#61bcea" x="400.44" y="321.06" width="22.68" height="22.68" rx="11.34"/>
-    <!-- 예_ㅔ -->
-    <line class="s" x1="431.62" y1="321.06" x2="425.95" y2="321.06"/>
-    <line class="s" x1="431.62" y1="343.74" x2="425.95" y2="343.74"/>
-    <rect class="s" x="454.29" y="275.71" width="28.35" height="113.39"/>
-    <rect class="s" x="425.95" y="275.71" width="28.35" height="113.39"/>
-    <!-- 에_ㅇ -->
-    <line class="s" x1="411.77" y1="318.23" x2="411.77" y2="346.58"/>
-    <path class="s" d="M411.77,275.71h14.17v99.21c0,7.82-6.35,14.17-14.17,14.17h-14.17v-99.21c0-7.82,6.35-14.17,14.17-14.17Z"/>
-  </g>
-
-  <!-- ── MOK (목) ─── 핵심 인터랙션 ───────────────── -->
-  <g>
-    <!-- 목_ㄱ (하단 고정 꺾임) -->
-    <line class="s" x1="373.26" y1="592.02" x2="369.25" y2="596.03"/>
-    <polygon class="s" points="397.59 570.52 397.59 615.87 369.25 615.87 369.25 596.03 312.56 596.03 312.56 570.52 397.59 570.52"/>
-
-    <!-- 목_ㅁ 눈 점 두 개 -->
-    <line class="s" x1="340.91" y1="298.39" x2="340.91" y2="304.06"/>
-    <line class="s" x1="369.25" y1="298.39" x2="369.25" y2="304.06"/>
-    <line class="s" x1="340.91" y1="301.22" x2="369.25" y2="301.22"/>
-    <rect class="d" x="346.58" y="291.3" width="1.42" height="1.42"/>
-    <rect class="d" x="362.17" y="291.3" width="1.42" height="1.42"/>
-
-    <!-- 목_모: 볼 위치에 반응하는 동적 벽 -->
-    <path id="reactive-wall" class="s"
-      d="M369.25,321.06v88.16c0,4.18,1.51,8.16,4.01,11.5,5.83,7.79,5.83,19.65,0,27.44-2.5,3.34-4.01,7.33-4.01,11.51v88.16h28.35v22.68h-85.04v-22.68h28.34v-88.2c0-4.16-1.5-8.13-3.99-11.46-5.81-7.76-5.84-19.66-.01-27.45,2.5-3.35,4.01-7.33,4.01-11.5v-88.16h-28.34v-45.35h85.04v45.35h-28.35Z"/>
-
-    <!-- 초록 볼 (드래그 대상 - 오프닝부터 초록색 고정) -->
-    <rect id="ball-mok3" fill="hsl(140, 100%, 50%)"
-          x="343.74" y="423.11"
-          width="22.68" height="22.68"
-          rx="11.34" ry="11.34"/>
-  </g>
-
-
-</svg>
+  <g id="poster-candies"><circle class="candy" cx="550" cy="355" r="24" fill="#22b3a5" /><circle class="candy" cx="650" cy="520" r="24" fill="#df90bd" /><circle class="candy" cx="965" cy="690" r="24" fill="#ffeb00" /><circle class="candy" cx="840" cy="1080" r="24" fill="#9870ad" /><circle class="candy" cx="500" cy="1260" r="24" fill="#ef5632" /><circle class="candy" cx="700" cy="1560" r="24" fill="#61c4e3" /></g></svg>
 </section>
 <section class="final-screen" id="final-screen" aria-label="전시 초대와 안내">
 <div class="final-text-box"><div id="final-main-text"></div><div id="final-members-text" class="final-members-text"></div><div class="final-cta-wrap"><a id="final-cta-btn" class="final-cta-btn" href="https://ddp.or.kr/?menuno=240" target="_blank" rel="noopener noreferrer"><span>더 알아보기</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
@@ -198,10 +224,9 @@ const tempMain=document.createElement('div');tempMain.innerHTML=FINAL_MAIN_HTML;
 const tempMemb=document.createElement('div');tempMemb.innerHTML=FINAL_MEMBERS_HTML;document.getElementById('final-members-text').innerHTML=wrapFinalNodes(tempMemb);
 const finalChars=[...document.querySelectorAll('.fch')];
 function startFinalTyping(){finalScreen.classList.add('visible');if(reducedMotion){finalChars.forEach(c=>c.style.display='inline');document.getElementById('final-cta-btn').classList.add('visible');return}if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].style.display='inline';triggerHaptic();fIdx++}else{clearInterval(timer);typeAudio.pause();typeAudio.loop=false;document.getElementById('final-cta-btn').classList.add('visible')}},38)}
-const candyRects=[...svg.querySelectorAll('g > rect[rx]')].filter(el=>el.getAttribute('fill'));
-const candies=candyRects.map(el=>{const clone=el.cloneNode(true);clone.removeAttribute('id');clone.classList.add('candy');svg.appendChild(clone);el.style.visibility='hidden';return clone});
-const trails=[[[0,0],[0,-24],[29,-24],[29,-67],[72,-67],[100,-110]],[[0,0],[0,-27],[0,-48],[-45,-48],[-45,-94],[-95,-94]],[[0,0],[0,26],[30,26],[30,-20],[75,-20],[105,-85]],[[0,0],[28,0],[28,26],[68,26],[68,-30],[110,-60]],[[0,0],[0,-27],[42,-27],[42,-68],[91,-68],[130,-110]],[[0,0],[0,-32],[0,-91],[-39,-91],[-39,-153],[-88,-184]]];
-const palette=['#84c779','#f04f2c','#db58a0','#faed28','#61bcea','#9a70b6'];
+const candies=[...svg.querySelectorAll('#poster-candies .candy')];
+const trails=[[[0,0],[65,0],[65,70],[125,70],[125,150]],[[0,0],[-60,0],[-60,90],[-145,90],[-145,175]],[[0,0],[0,80],[-85,80],[-85,155],[-145,155]],[[0,0],[-85,0],[-85,95],[-170,95],[-170,170]],[[0,0],[0,-75],[-95,-75],[-95,-160],[-155,-160]],[[0,0],[75,0],[75,-85],[150,-85],[190,-160]]];
+const palette=['#22b3a5','#df90bd','#ffeb00','#9870ad','#ef5632','#61c4e3'];
 function scatter(rect,seed){const screenBox=screen.getBoundingClientRect(),box=rect.getBoundingClientRect(),x=box.left+box.width/2-screenBox.left,y=box.top+box.height/2-screenBox.top;const w=screen.clientWidth,h=screen.clientHeight;for(let i=0;i<42;i++){const piece=document.createElement('i');piece.className='confetti';const size=5+(i%4)*2;piece.style.cssText=`left:${x}px;top:${y}px;width:${size}px;height:${size}px;border-radius:${i%3===0?'2px':'50%'};background:${palette[(i+seed)%palette.length]}`;screen.appendChild(piece);const col=(i*17+seed*11)%14,row=(i*7+seed*13)%18;const endX=(col+.5)/14*w,endY=(row+.5)/18*h;piece.animate([{transform:'translate(-50%,-50%) scale(.4)',opacity:1,offset:0},{transform:`translate(${endX-x}px,${endY-y}px) scale(1)`,opacity:1,offset:.7},{transform:`translate(${endX-x}px,${endY-y+35}px) scale(.7)`,opacity:0,offset:1}],{duration:1500+(i%5)*90,easing:'cubic-bezier(.14,.65,.27,1)',fill:'forwards'}).onfinish=()=>piece.remove()}}
 function release(){play(whooshAudio,.5);candies.forEach((ball,i)=>{const points=trails[i],frames=points.map((p,j)=>({transform:`translate(${p[0]}px,${p[1]}px) scale(${j===points.length-1?1.2:1})`,opacity:j===points.length-1?0:1,offset:j/(points.length-1)}));ball.animate(frames,{duration:1050,delay:i*135,easing:'linear',fill:'forwards'});setTimeout(()=>{scatter(ball,i);play(popAudio,.5)},800+i*135)})}
 function run(){const preview=new URLSearchParams(location.search).get('preview');if(preview==='opening')return;if(preview==='final'){opening.style.opacity='0';finalScreen.classList.add('visible');finalChars.forEach(c=>c.style.display='inline');document.getElementById('final-cta-btn').classList.add('visible');return}if(reducedMotion){opening.style.opacity='0';startFinalTyping();return}setTimeout(()=>opening.classList.add('open'),600);setTimeout(release,1550);setTimeout(()=>{opening.style.opacity='0';startFinalTyping()},3550)}
