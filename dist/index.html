@@ -20,10 +20,10 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 .scroll-track.unlocked{overflow-y:auto;overflow-x:hidden;touch-action:pan-y}
 .scroll-track::-webkit-scrollbar{display:none}
 .opening{position:relative;width:100%;height:100%;overflow:hidden;background:#fff}
-.poster-grid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;pointer-events:none;transform:translate(-18px,48px)}
-.topline{position:absolute;z-index:2;top:5.1%;left:7%;right:7%;display:flex;justify-content:space-between;gap:12px;font-size:clamp(11px,1.7svh,14px);line-height:1.33;letter-spacing:-.025em;font-weight:520}
+.poster-grid{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:1;pointer-events:none;transform:translate(-18px,30px)}
+.topline{position:absolute;z-index:2;top:3.4%;left:7%;right:7%;display:flex;justify-content:space-between;gap:12px;font-size:clamp(11px,1.7svh,14px);line-height:1.33;letter-spacing:-.025em;font-weight:520}
 .topline p{margin:0}.topline p:last-child{text-align:right}
-#main-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:2;transform:translate(-18px,48px)}
+#main-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:2;transform:translate(-18px,30px)}
 #poster-letters>g{transform-box:fill-box;transform-origin:center;transition:transform .98s cubic-bezier(.42,0,.2,1)}
 #poster-letters>g.aligned{transform:translateX(var(--align-x,0px))}
 .candy{transform-box:fill-box;transform-origin:center;will-change:transform}
@@ -231,17 +231,15 @@ body{min-height:100svh;display:grid;place-items:center;background:#e9ebed}
 <div class="detail-box pending"><span class="section-label">장소 · 일시</span><div id="final-info-text"></div></div>
 <div id="final-members-text" class="final-members-text detail-box pending"></div>
 <div class="final-cta-wrap pending">
-<a class="final-cta-btn" href="https://ddp.or.kr/index.html?menuno=230&amp;siteno=2&amp;bbsno=620&amp;boardno=15&amp;bbstopno=620&amp;act=view" target="_blank" rel="noopener noreferrer"><span>내일을 여는 디자인전:<br>DDP NEXT DESIGN</span><span aria-hidden="true">↗</span></a>
+<a class="final-cta-btn" href="https://ddp.or.kr/index.html?menuno=230&amp;siteno=2&amp;bbsno=620&amp;boardno=15&amp;bbstopno=620&amp;act=view" target="_blank" rel="noopener noreferrer">DDP 전시 <span aria-hidden="true">↗</span></a>
 <a class="final-cta-btn" href="https://map.naver.com/p/search/%EB%8F%99%EB%8C%80%EB%AC%B8%EB%94%94%EC%9E%90%EC%9D%B8%ED%94%8C%EB%9D%BC%EC%9E%90" target="_blank" rel="noopener noreferrer">오시는 길 <span aria-hidden="true">↗</span></a>
-<a class="final-cta-btn" href="https://www.instagram.com/stuck_in_a_throat/" target="_blank" rel="noopener noreferrer">&lt;목에 걸린 사탕&gt; 인스타그램 <span aria-hidden="true">↗</span></a>
+<a class="final-cta-btn" href="https://www.instagram.com/stuck_in_a_throat/" target="_blank" rel="noopener noreferrer">인스타그램 <span aria-hidden="true">↗</span></a>
 </div><div class="final-logos pending"><img src="assets/partner-logos.svg" alt="DDP · 홍익대학교"></div></div>
 </section>
 </div>
 </main>
 </div>
 <audio id="typing-audio" src="assets/typing.mp3" preload="auto" loop></audio>
-<audio id="pop-audio" src="assets/pop.mp3" preload="auto"></audio>
-<audio id="whoosh-audio" src="assets/whoosh.mp3" preload="auto"></audio>
 <script>
 const FINAL_MAIN_HTML = `<p class="invite-lead"><span class="accent-title">목에 걸린 사탕</span>을<br><span class="accent-green">함께 꺼내주실 여러분</span>을<br><span class="accent-lime">DDP</span>로 <span class="accent-yellow">초대합니다.</span></p><p class="invite-body"><span class="accent-red">오랜 시간</span> 준비한 이야기들을 <span class="accent-lime">DDP</span>에서 <span class="accent-yellow">선보입니다.</span> 끝이라고 생각한 뒤에도 <span class="accent-blue">전하고 싶은 이야기</span>가 남아 있었습니다. 귀한 걸음으로 <span class="accent-purple">함께해 주시면</span> <span class="accent-orange">감사하겠습니다.</span></p>`;
 const FINAL_INFO_HTML = `<div class="venue">DDP 아트홀 2관 <span class="info-divider">·</span> A-29</div><div class="date">2026. 12. 01 <span class="info-divider">—</span> 12. 05</div><div class="info-time">화–금 10:00–20:00 <span class="info-divider">·</span> 토 10:00–18:00<br/>무료 관람 <span class="info-divider">·</span> 종료 30분 전 입장 마감</div>`;
@@ -252,13 +250,10 @@ const opening=document.getElementById('opening');
 const svg=document.getElementById('main-svg');
 const finalScreen=document.getElementById('final-screen');
 const typeAudio=document.getElementById('typing-audio');
-const popAudio=document.getElementById('pop-audio');
-const whooshAudio=document.getElementById('whoosh-audio');
 const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
-let soundEnabled=false;
-function enableSound(){soundEnabled=true;document.removeEventListener('pointerdown',enableSound);if(finalScreen.classList.contains('visible')&&finalChars.some(c=>c.style.visibility==='hidden'))typeAudio.play().catch(()=>{})}
+let soundEnabled=false,isTyping=false;
+function enableSound(){soundEnabled=true;document.removeEventListener('pointerdown',enableSound);if(isTyping)typeAudio.play().catch(()=>{})}
 document.addEventListener('pointerdown',enableSound,{once:true});
-function play(audio,volume){if(!soundEnabled)return;try{const a=audio.cloneNode();a.volume=volume;a.play().catch(()=>{})}catch(e){}}
 function triggerHaptic(){if('vibrate' in navigator)navigator.vibrate(6)}
 function wrapFinalNodes(node){let result='';node.childNodes.forEach(child=>{if(child.nodeType===3){for(const ch of child.textContent)result+=`<span class="fch" style="visibility:hidden;">${ch==='<'?'&lt;':ch==='&'?'&amp;':ch}</span>`}else if(child.nodeType===1){const tag=child.tagName.toLowerCase();if(tag==='br')result+='<br/>';else{let attrs='';for(const attr of child.attributes)attrs+=` ${attr.name}="${attr.value}"`;result+=`<${tag}${attrs}>${wrapFinalNodes(child)}</${tag}>`}}});return result}
 const tempMain=document.createElement('div');tempMain.innerHTML=FINAL_MAIN_HTML;document.getElementById('final-main-text').innerHTML=wrapFinalNodes(tempMain);
@@ -267,7 +262,7 @@ document.getElementById('final-members-text').innerHTML=FINAL_MEMBERS_HTML;
 const finalChars=[...document.querySelectorAll('.fch')];
 function showCallouts(){document.querySelector('.final-cta-wrap').classList.remove('pending');document.querySelector('.final-logos').classList.remove('pending');document.querySelectorAll('.final-cta-btn').forEach(a=>a.classList.add('visible'))}
 function revealDetails(){const boxes=[document.querySelector('#final-info-text').closest('.detail-box'),document.querySelector('#final-members-text')];boxes.forEach((box,i)=>setTimeout(()=>box.classList.remove('pending'),350+i*900));setTimeout(showCallouts,2150)}
-function startFinalTyping(){finalScreen.classList.remove('awaiting');finalScreen.classList.add('visible');if(reducedMotion){document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.visibility='visible');showCallouts();return}if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].style.visibility='visible';if(fIdx%3===0)triggerHaptic();fIdx++}else{clearInterval(timer);typeAudio.pause();typeAudio.loop=false;revealDetails()}},38)}
+function startFinalTyping(){finalScreen.classList.remove('awaiting');finalScreen.classList.add('visible');if(reducedMotion){document.querySelectorAll('.detail-box.pending').forEach(b=>b.classList.remove('pending'));finalChars.forEach(c=>c.style.visibility='visible');showCallouts();return}isTyping=true;if(soundEnabled){typeAudio.volume=.6;typeAudio.playbackRate=1.5;typeAudio.currentTime=0;typeAudio.play().catch(()=>{})}let fIdx=0;const timer=setInterval(()=>{if(fIdx<finalChars.length){finalChars[fIdx].style.visibility='visible';if(fIdx%3===0)triggerHaptic();fIdx++}else{clearInterval(timer);isTyping=false;typeAudio.pause();typeAudio.loop=false;revealDetails()}},38)}
 const candies=[...svg.querySelectorAll('#poster-candies .candy')];
 const letterIds=['MOK-2','EH-2','GUL-2','LIN-2','SA-2','TANG-2'];
 const letterGroups=letterIds.map(id=>document.getElementById(id));
@@ -394,7 +389,6 @@ function addRainBalls(){
   return added;
 }
 function fallAndPile(){
-  play(whooshAudio,.5);
   const height=screen.clientHeight;
   const frame=screen.getBoundingClientRect();
   for(const ball of fallingBalls){
@@ -406,7 +400,7 @@ function fallAndPile(){
   }
   const makeBody=(ball,i)=>({ball,x:parseFloat(ball.style.left),y:parseFloat(ball.style.top),r:ball.offsetWidth/2,vx:i<6?[-2.2,-1.4,1.8,2.3,-2.5,2.6][i]:(((i*7)%5)-2)*.8,vy:0,landed:false,isRain:i>=6});
   const bodies=fallingBalls.map(makeBody);
-  let last=performance.now(),frames=0,informationStarted=false,landedCount=0,lastPop=0;
+  let last=performance.now(),frames=0,informationStarted=false,landedCount=0;
   const startIndex=bodies.length;
   addRainBalls().forEach((ball,j)=>bodies.push(makeBody(ball,startIndex+j)));
   function step(now){
@@ -423,7 +417,7 @@ function fallAndPile(){
       if(body.y>floor){
         body.y=floor;body.vy=Math.abs(body.vy)<.6?0:-body.vy*.43;body.vx*=.97;
         if(!body.landed){
-          body.landed=true;landedCount++;if(now-lastPop>90){play(popAudio,.32);lastPop=now}
+          body.landed=true;landedCount++;
         }
       }
     }
